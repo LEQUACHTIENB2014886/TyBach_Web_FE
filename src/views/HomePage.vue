@@ -10,6 +10,7 @@
   <style scoped>
   h2 {
     color: #42b983;
+    height: 700px;;
   }
   </style>
   
