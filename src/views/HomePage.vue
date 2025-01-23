@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h2>Welcome to the Home Page</h2>
+      <h1>Welcome to the Home Page</h1>
     </div>
   </template>
   
@@ -8,9 +8,12 @@
   </script>
   
   <style scoped>
-  h2 {
-    color: #42b983;
-    height: 1000px;;
+  h1 {
+    color: #1b1a2c;
+    height: 700px;;
+    text-align: center;
+    font-size:100px;
+    align-items: center;
   }
   </style>
   

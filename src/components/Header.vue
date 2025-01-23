@@ -20,8 +20,32 @@
   
 <style scoped>
 header {
-  background-color: #42b983;
+  background-color: rgb(244, 246, 248);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
   padding: 1rem 0;
+}
+
+header:hover {
+  background-color: rgb(235, 238, 240); 
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.logo {
+  max-width: 80px;
+  height: auto;
+  margin: 0 15px;
+}
+
+.time-right {
+  font-size: 1.2rem;
+  color: #34495e; 
 }
 
 .el-row {
@@ -40,6 +64,7 @@ header {
 .logo-container {
   display: flex;
   align-items: center;
+  margin-left:15px;
 }
 
 .logo {
@@ -50,7 +75,6 @@ header {
 
 h1 {
   font-size: 1.5rem;
-  color: white;
   margin: 0;
   white-space: nowrap;
 }
@@ -64,8 +88,7 @@ h1 {
 }
 
 .clock {
-  font-size: 22px;
-  color: white;
+  font-size: 18px;
 }
 </style>
   

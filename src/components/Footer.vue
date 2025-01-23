@@ -105,12 +105,12 @@ onMounted(() => {
 
 <style scoped>
 footer {
-  background-color: #2c3e50;
+  background-color: #1c2631;
   transition: background-color 0.5s ease;
 }
 
 footer:hover {
-  background-color: #34495e;
+  background-color: rgb(18, 26, 34);
 }
 
 .el-row {
