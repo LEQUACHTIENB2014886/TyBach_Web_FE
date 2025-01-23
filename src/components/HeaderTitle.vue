@@ -10,7 +10,7 @@
     <el-sub-menu index="2">
       <template #title>Giới thiệu</template>
       <el-menu-item index="2-1">Giới thiệu chung</el-menu-item>
-      <el-menu-item index="2-2">Lịch sự hát triển</el-menu-item>
+      <el-menu-item index="2-2">Lịch sự phát triển</el-menu-item>
     </el-sub-menu>
 
     <el-sub-menu index="3">
