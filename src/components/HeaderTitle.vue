@@ -37,8 +37,35 @@
 
     <el-sub-menu index="7">
       <template #title>Liên hệ</template>
-      <el-menu-item index="7-1">Liên hệ với Chúng tôi</el-menu-item>
+      <el-menu-item index="7-1">Liên hệ với Chúng tôi </el-menu-item>
       <el-menu-item index="7-2">Nộp hồ sơ</el-menu-item>
+    </el-sub-menu>
+    <el-sub-menu index="8">
+      <template #title>
+        <img src="../assets/language.svg" alt="icon" class="icon" />
+      </template>
+      <el-menu-item index="8-1">
+        <a>
+          <img src="../assets/Flag/VietNam_Flag.png" alt="icon" class="icon" />
+          Tiếng Việt
+        </a>
+      </el-menu-item>
+      <el-menu-item index="8-2">
+        <a>
+          <img src="../assets/Flag/China_Flag.png" alt="icon" class="icon" />
+          中国人
+        </a>
+      </el-menu-item>
+      <el-menu-item index="8-3">
+        <a>
+          <img
+            src="../assets/Flag/United_KingDom_Flag.png"
+            alt="icon"
+            class="icon"
+          />
+          English
+        </a>
+      </el-menu-item>
     </el-sub-menu>
   </el-menu>
 </template>
@@ -46,9 +73,23 @@
   <script setup></script>
   <style scoped>
 .el-menu-popper-demo {
-  max-width: 1600px;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.el-menu-item a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.el-menu-item img.icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.icon {
+  width: 22px;
+  height: 100%;
 }
 </style>

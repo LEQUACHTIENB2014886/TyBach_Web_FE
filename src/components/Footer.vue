@@ -108,6 +108,10 @@ onMounted(() => {
 footer {
   background-color: #1c2631;
   transition: background-color 0.5s ease;
+  padding: 1rem 0;
+  color: white;
+  text-align: center;
+  margin-top: auto; 
 }
 
 footer:hover {

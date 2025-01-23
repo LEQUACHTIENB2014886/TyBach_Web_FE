@@ -38,19 +38,4 @@ html,
   min-height: 100vh; 
 }
 
-main {
-  flex-grow: 1; 
-}
-
-footer {
-  background-color: #2c3e50;
-  padding: 1rem 0;
-  color: white;
-  text-align: center;
-  margin-top: auto; 
-}
-
-footer:hover {
-  background-color: #34495e;
-}
 </style>
