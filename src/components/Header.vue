@@ -64,8 +64,7 @@ h1 {
 }
 
 .clock {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 22px;
   color: white;
 }
 </style>
