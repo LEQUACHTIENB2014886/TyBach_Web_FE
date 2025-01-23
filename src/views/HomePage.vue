@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>Welcome to the Home Page</h1>
+      <h1>Welcome cái gì kệ kao</h1>
     </div>
   </template>
   
