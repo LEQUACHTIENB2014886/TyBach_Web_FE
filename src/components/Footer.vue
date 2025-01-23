@@ -21,8 +21,7 @@
       </el-col>
       <el-col :span="5" class="ft">
         <div class="title">Liên hệ</div>
-        <div class="content">Nộp hồ sơ khu A</div>
-        <div class="content">Nộp hồ sơ khu B</div>
+        <div class="content">Nộp hồ sơ</div>
       </el-col>
       <el-col :span="2"></el-col>
     </el-row>
