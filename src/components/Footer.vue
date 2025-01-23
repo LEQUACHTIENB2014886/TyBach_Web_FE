@@ -71,6 +71,7 @@
       <el-col :span="2"></el-col>
     </el-row>
     <hr />
+    <a style="font-style: italic;"> Bản quyền @ Ty Bach Company Limited</a>
   </footer>
 </template>
 

@@ -12,10 +12,12 @@
       </el-col>
     </el-row>
   </header>
+  <HeaderTitle />
 </template>
   
 <script setup>
   import RealTimeClock from "./RealTimeClock.vue";
+  import HeaderTitle from "./HeaderTitle.vue";
 </script>
   
 <style scoped>
