@@ -141,7 +141,7 @@ footer:hover {
 }
 
 .content {
-  margin: 1rem 0;
+  margin: 1rem 0 1rem 1px;
   font-size: 1rem;
 }
 
@@ -151,7 +151,7 @@ hr {
 }
 
 .contact {
-  margin: 10px 0 10px 25px;
+  margin: 10px 0 10px 30px;
 }
 
 .ggmap {
