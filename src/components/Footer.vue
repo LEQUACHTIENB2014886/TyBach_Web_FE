@@ -9,11 +9,11 @@
       </el-col>
       <el-col :span="5" class="ft">
         <div class="title">Trách nhiệm xã hội</div>
-        <div class="content">Bảo vệ quyền của người lao động</div>
-        <div class="content">Quản lý sức khỏe và an toàn</div>
-        <div class="content">Bảo vệ môi trường</div>
-        <div class="content">Hoạt động chi bộ Đảng</div>
-        <div class="content">Hoạt động công đoàn</div>
+        <div class="content">Quyền lợi lao động</div>
+        <div class="content">Sức khỏe và An toàn</div>
+        <div class="content">Bảo vệ Môi trường</div>
+        <div class="content">Hoạt động Chi bộ Đảng</div>
+        <div class="content">Hoạt động Công đoàn</div>
       </el-col>
       <el-col :span="5" class="ft">
         <div class="title">Tuyển dụng</div>
@@ -106,7 +106,7 @@ onMounted(() => {
 <style scoped>
 footer {
   background-color: #1c2631;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;  
   padding: 1rem 0;
   color: white;
   text-align: center;
