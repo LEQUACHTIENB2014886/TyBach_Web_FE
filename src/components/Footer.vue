@@ -130,14 +130,14 @@ footer:hover {
 
 .title {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4em;
   margin-bottom: 0.5rem;
   padding-top: 10px;
 }
 
 .title_2 {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .content {
