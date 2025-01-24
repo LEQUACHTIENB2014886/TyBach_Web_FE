@@ -88,6 +88,4 @@ h1 {
 .clock {
   font-size: 18px;
 }
-
-
 </style>

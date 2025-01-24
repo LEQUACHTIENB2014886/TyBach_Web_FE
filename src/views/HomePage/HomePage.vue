@@ -16,7 +16,11 @@
     <el-row class="Cuongga">
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <img src="../../assets/LogoShoes/newbalance.png" alt="nb" class="logo" />
+          <img
+            src="../../assets/LogoShoes/newbalance.png"
+            alt="nb"
+            class="logo"
+          />
         </div>
       </el-col>
       <el-col :span="6">
@@ -40,7 +44,8 @@
       </h3>
     </div>
   </div>
-  <br> <br>
+  <br />
+  <br />
 </template>
 
 <script setup>
@@ -69,7 +74,6 @@
   text-align: center;
 }
 
-
 .Name {
   font-size: 56px;
   font-weight: bold;
@@ -79,7 +83,6 @@
   padding: 10px 0;
   border-radius: 10px;
 }
-
 
 .Name2 {
   font-size: 50px;
