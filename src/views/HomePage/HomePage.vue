@@ -36,7 +36,6 @@
         </div>
       </el-col>
     </el-row>
-    <hr>
     <h1 class="Name2">Quyền lợi Lao động</h1>
     <div class="PMobai">
       <h3 class="Mobai">
@@ -46,7 +45,6 @@
         cùng với những phần quà giá trị và khen thưởng đầy khích lệ.
       </h3>
     </div>
-    <hr>
   </div>
   <br />
 </template>
@@ -151,7 +149,7 @@ hr {
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
-  width: 700px;
+  width: 1000px;
 }
 
 </style>
