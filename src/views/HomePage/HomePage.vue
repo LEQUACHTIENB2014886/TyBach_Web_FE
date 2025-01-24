@@ -30,7 +30,6 @@
         </div>
       </el-col>
     </el-row>
-    <h1 class="Name">CÔNG TY TNHH TỶ BÁCH 亿伯</h1>
     <h1 class="Name2">Quyền lợi Lao động</h1>
     <div class="PMobai">
       <h3 class="Mobai">
@@ -66,15 +65,23 @@
 .imgKCN:hover {
   transform: scale(1.006);
 }
-
-.Name,
 .Name2 {
   text-align: center;
 }
 
+
 .Name {
   font-size: 56px;
+  font-weight: bold;
+  color: #1f2c39;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
+  border-radius: 10px;
 }
+
+
 
 .Name2 {
   font-size: 50px;
