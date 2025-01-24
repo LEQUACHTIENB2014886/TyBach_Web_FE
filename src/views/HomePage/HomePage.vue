@@ -90,6 +90,7 @@
   text-align: center;
   letter-spacing: 2px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  margin:-5px 0;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
   display: inline-block; 
