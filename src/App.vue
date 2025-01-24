@@ -1,14 +1,15 @@
 <template>
   <Header />
-  <HomePage />
+  <HeaderTitle />
+  <router-view></router-view>
   <Footer />
 </template>
 
 <script setup>
 import { ref, watch, onMounted } from "vue";
 import Header from "./components/Header.vue";
+import HeaderTitle from "./components/HeaderTitle.vue";
 import Footer from "./components/Footer.vue";
-import HomePage from "./views/HomePage.vue";
 
 const pageTitle = ref("Trang chủ");
 
@@ -29,13 +30,12 @@ html,
   padding: 0;
   width: 100%;
   height: 100%;
-    font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
-
 </style>

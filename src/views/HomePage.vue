@@ -1,19 +1,19 @@
 <template>
-    <div>
-      <h1>Welcome</h1>
-    </div>
-  </template>
+  <div>
+    <h1>Welcome</h1>
+  </div>
+</template>
   
   <script setup>
-  </script>
+</script>
   
   <style scoped>
-  h1 {
-    color: #1b1a2c;
-    height: 700px;;
-    text-align: center;
-    font-size:100px;
-    align-items: center;
-  }
-  </style>
+h1 {
+  color: #1b1a2c;
+  height: 700px;
+  text-align: center;
+  font-size: 100px;
+  align-items: center;
+}
+</style>
   

@@ -1,30 +1,37 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
-import AboutPage from '../views/AboutPage.vue';
+import Homepage from '../views/HomePage.vue'; // Đảm bảo đúng tên file
+import Overview from '../views/Introduce/Overview.vue';
+import DevelopmentHistory from '../views/Introduce/DevelopmentHistory.vue';
+import LaborRights from '../views/SocialResponsibility/LaborRights.vue';
+import OccupationalHealthSafety from '../views/SocialResponsibility/OccupationalHealthSafety.vue';
+import EnvironmentalProtection from '../views/SocialResponsibility/EnvironmentalProtection.vue';
+import PartyActivities from '../views/BranchActivities/PartyActivities.vue';
+import UnionActivities from '../views/CompanyActivities/UnionActivities.vue';
+import ActivityVideos from '../views/CompanyActivities/ActivityVideos.vue';
+import JobInformation from '../views/Recruitment/JobInformation.vue';
+import HumanResources from '../views/Recruitment/HumanResources.vue';
+import ContactUs from '../views/Contact/ContactUs.vue';
+import SubmitApplication from '../views/Contact/SubmitApplication.vue';
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: HomePage,
-    meta: { title: 'Trang chủ' }
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: AboutPage,
-    meta: { title: 'Giới thiệu' }
-  }
+  { path: '/', component: Homepage },  
+  { path: '/introduce/overview', component: Overview },
+  { path: '/introduce/development-history', component: DevelopmentHistory },
+  { path: '/social-responsibility/labor-rights', component: LaborRights },
+  { path: '/social-responsibility/occupational-health-safety', component: OccupationalHealthSafety },
+  { path: '/social-responsibility/environmental-protection', component: EnvironmentalProtection },
+  { path: '/branch-activities', component: PartyActivities },
+  { path: '/company-activities/union-activities', component: UnionActivities },
+  { path: '/company-activities/activity-videos', component: ActivityVideos },
+  { path: '/recruitment/job-information', component: JobInformation },
+  { path: '/recruitment/human-resources', component: HumanResources },
+  { path: '/contact/contact-us', component: ContactUs },
+  { path: '/contact/submit-application', component: SubmitApplication },
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes
-});
-
-router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title || 'Trang chủ'} | TyBach`;
-  next();
 });
 
 export default router;

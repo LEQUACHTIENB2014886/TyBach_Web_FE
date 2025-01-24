@@ -1,45 +1,40 @@
 <template>
-  <el-menu
-    ellipsis
-    class="el-menu-popper-demo"
-    mode="horizontal"
-    :popper-offset="16"
-  >
-    <el-menu-item index="1">Trang chủ</el-menu-item>
+  <el-menu ellipsis class="el-menu-popper-demo" mode="horizontal" :popper-offset="16">
+    <el-menu-item index="1" @click="$router.push('/')">Trang chủ</el-menu-item>
 
     <el-sub-menu index="2">
       <template #title>Giới thiệu</template>
-      <el-menu-item index="2-1">Giới thiệu chung</el-menu-item>
-      <el-menu-item index="2-2">Lịch sự phát triển</el-menu-item>
+      <el-menu-item index="2-1" @click="$router.push('/introduce/overview')">Giới thiệu chung</el-menu-item>
+      <el-menu-item index="2-2" @click="$router.push('/introduce/development-history')">Lịch sự phát triển</el-menu-item>
     </el-sub-menu>
 
     <el-sub-menu index="3">
       <template #title>Trách nhiệm Xã hội</template>
-      <el-menu-item index="3-1">Trách nhiệm Xã hội</el-menu-item>
-      <el-menu-item index="3-2">Quyền lợi Lao động</el-menu-item>
-      <el-menu-item index="3-1">Sức khỏe và An toàn</el-menu-item>
-      <el-menu-item index="3-1">Bảo vệ Môi trường</el-menu-item>
+      <el-menu-item index="3-1" @click="$router.push('/social-responsibility/labor-rights')">Quyền lợi Lao động</el-menu-item>
+      <el-menu-item index="3-2" @click="$router.push('/social-responsibility/occupational-health-safety')">Sức khỏe và An toàn</el-menu-item>
+      <el-menu-item index="3-3" @click="$router.push('/social-responsibility/environmental-protection')">Bảo vệ Môi trường</el-menu-item>
     </el-sub-menu>
 
-    <el-menu-item index="4">Hoạt động chi bộ Đảng</el-menu-item>
+    <el-menu-item index="4" @click="$router.push('/branch-activities')">Hoạt động chi bộ Đảng</el-menu-item>
 
     <el-sub-menu index="5">
       <template #title>Hoạt động công đoàn</template>
-      <el-menu-item index="5-1">Hoạt động Công đoàn</el-menu-item>
-      <el-menu-item index="5-2">Video Hoạt động</el-menu-item>
+      <el-menu-item index="5-1" @click="$router.push('/company-activities/union-activities')">Hoạt động Công đoàn</el-menu-item>
+      <el-menu-item index="5-2" @click="$router.push('/company-activities/activity-videos')">Video Hoạt động</el-menu-item>
     </el-sub-menu>
 
     <el-sub-menu index="6">
       <template #title>Tuyển dụng</template>
-      <el-menu-item index="6-1">Thông tin Tuyển dụng</el-menu-item>
-      <el-menu-item index="6-2">Nguồn nhân lực</el-menu-item>
+      <el-menu-item index="6-1" @click="$router.push('/recruitment/job-information')">Thông tin Tuyển dụng</el-menu-item>
+      <el-menu-item index="6-2" @click="$router.push('/recruitment/human-resources')">Nguồn nhân lực</el-menu-item>
     </el-sub-menu>
 
     <el-sub-menu index="7">
       <template #title>Liên hệ</template>
-      <el-menu-item index="7-1">Liên hệ với Chúng tôi </el-menu-item>
-      <el-menu-item index="7-2">Nộp hồ sơ</el-menu-item>
+      <el-menu-item index="7-1" @click="$router.push('/contact/contact-us')">Liên hệ với Chúng tôi</el-menu-item>
+      <el-menu-item index="7-2" @click="$router.push('/contact/submit-application')">Nộp hồ sơ</el-menu-item>
     </el-sub-menu>
+
     <el-sub-menu index="8">
       <template #title>
         <img src="../assets/language.svg" alt="icon" class="icon" />
@@ -58,20 +53,17 @@
       </el-menu-item>
       <el-menu-item index="8-3">
         <a>
-          <img
-            src="../assets/Flag/United_KingDom_Flag.png"
-            alt="icon"
-            class="icon"
-          />
+          <img src="../assets/Flag/United_KingDom_Flag.png" alt="icon" class="icon" />
           English
         </a>
       </el-menu-item>
     </el-sub-menu>
   </el-menu>
 </template>
-  
-  <script setup></script>
-  <style scoped>
+
+<script setup></script>
+
+<style scoped>
 .el-menu-popper-demo {
   max-width: 100%;
   display: flex;
