@@ -154,4 +154,6 @@ const changeLanguage = (lang) => {
   width: 22px;
   height: 100%;
 }
+
+
 </style>

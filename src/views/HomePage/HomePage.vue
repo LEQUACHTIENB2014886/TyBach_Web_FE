@@ -3,7 +3,9 @@
     <div class="KCNBM">
       <img src="../../assets/KCNBM.png" alt="Ảnh KCNBM" class="imgKCN" />
     </div>
+    <hr>
     <h1 class="Name">CÔNG TY TNHH TỶ BÁCH 亿伯</h1>
+    <hr>
     <h1 class="Name2">Phạm vi Kinh doanh</h1>
     <div class="PMobai">
       <h3 class="Mobai">
@@ -34,6 +36,7 @@
         </div>
       </el-col>
     </el-row>
+    <hr>
     <h1 class="Name2">Quyền lợi Lao động</h1>
     <div class="PMobai">
       <h3 class="Mobai">
@@ -43,8 +46,8 @@
         cùng với những phần quà giá trị và khen thưởng đầy khích lệ.
       </h3>
     </div>
+    <hr>
   </div>
-  <br />
   <br />
 </template>
 
@@ -141,4 +144,14 @@
   align-items: center;
   text-align: center;
 }
+
+hr {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  width: 700px;
+}
+
 </style>
