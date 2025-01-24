@@ -108,7 +108,7 @@ const updateOperatingStatus = () => {
     operatingStatus.value = "Đang mở cửa";
     isOpen.value = true;
   } else {
-    operatingStatus.value = "Đóng cửa";
+    operatingStatus.value = "Đóng cửa (Hoạt động từ 07h30 - 16h30)";
     isOpen.value = false;
   }
 };
