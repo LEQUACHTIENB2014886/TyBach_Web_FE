@@ -44,7 +44,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: #1f2c39;
+  color: #19232d;
   }
 *{
   font-family: Roboto;
