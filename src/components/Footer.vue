@@ -51,7 +51,17 @@
         <div class="title_2">
           <el-icon><Clock /></el-icon> Giờ hoạt động
         </div>
-        <div class="contact" :style="{ color: isOpen ? '#7FFF00' : '#DC143C' }">
+        <div
+          class="contact"
+          :style="{
+            color:
+              operatingStatus === 'Đang mở cửa'
+                ? '#7FFF00'
+                : operatingStatus === 'Đang chuẩn bị'
+                ? '#FFA500'
+                : '#DC143C',
+          }"
+        >
           {{ operatingStatus }}
         </div>
       </el-col>
@@ -70,7 +80,7 @@
       <el-col :span="2"></el-col>
     </el-row>
     <hr />
-    <a style="font-style: italic;"> Bản quyền @ Ty Bach Company Limited</a>
+    <a style="font-style: italic"> Bản quyền @ Ty Bach Company Limited</a>
   </footer>
 </template>
 
@@ -85,10 +95,15 @@ const updateOperatingStatus = () => {
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const currentTime = hours * 60 + minutes;
+  const preparingTimeStart = 6 * 60;
+  const preparingTimeEnd = 7 * 60 + 30;
   const openingTime = 7 * 60 + 30;
   const closingTime = 16 * 60 + 30;
 
-  if (currentTime >= openingTime && currentTime < closingTime) {
+  if (currentTime >= preparingTimeStart && currentTime < preparingTimeEnd) {
+    operatingStatus.value = "Đang chuẩn bị";
+    isOpen.value = false;
+  } else if (currentTime >= openingTime && currentTime < closingTime) {
     operatingStatus.value = "Đang mở cửa";
     isOpen.value = true;
   } else {
@@ -106,11 +121,11 @@ onMounted(() => {
 <style scoped>
 footer {
   background-color: #1c2631;
-  transition: background-color 0.5s ease;  
+  transition: background-color 0.5s ease;
   padding: 1rem 0;
   color: white;
   text-align: center;
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 footer:hover {
@@ -157,5 +172,4 @@ hr {
 .ggmap {
   border-radius: 5px;
 }
-
 </style>
