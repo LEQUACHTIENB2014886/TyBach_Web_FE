@@ -45,6 +45,7 @@
         cùng với những phần quà giá trị và khen thưởng đầy khích lệ.
       </h3>
     </div>
+    <hr>
   </div>
   <br />
 </template>
