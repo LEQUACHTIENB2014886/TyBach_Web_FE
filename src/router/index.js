@@ -20,7 +20,7 @@ const routes = [
   { path: '/social-responsibility/labor-rights', component: LaborRights },
   { path: '/social-responsibility/occupational-health-safety', component: OccupationalHealthSafety },
   { path: '/social-responsibility/environmental-protection', component: EnvironmentalProtection },
-  { path: '/branch-activities', component: PartyActivities },
+  { path: '/branch-activities', component: PartyActivities }, 
   { path: '/company-activities/union-activities', component: UnionActivities },
   { path: '/company-activities/activity-videos', component: ActivityVideos },
   { path: '/recruitment/job-information', component: JobInformation },

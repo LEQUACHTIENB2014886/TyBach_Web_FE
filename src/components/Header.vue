@@ -8,18 +8,28 @@
         </div>
       </el-col>
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="time-right">
-        <RealTimeClock />
+        {{ currentTime }}
       </el-col>
     </el-row>
   </header>
-
 </template>
-  
-<script setup>
-  import RealTimeClock from "./RealTimeClock.vue";
 
+<script setup>
+import { computed, onMounted } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const currentTime = computed(() => store.getters["clock/currentTime"]);
+
+onMounted(() => {
+  store.dispatch("clock/updateTime");
+  setInterval(() => {
+    store.dispatch("clock/updateTime");
+  }, 1000);
+});
 </script>
-  
+
 <style scoped>
 header {
   background-color: rgb(244, 246, 248);
@@ -28,7 +38,7 @@ header {
 }
 
 header:hover {
-  background-color: rgb(235, 238, 240); 
+  background-color: rgb(235, 238, 240);
   border-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -47,7 +57,8 @@ h1 {
 
 .time-right {
   font-size: 1.2rem;
-  color: #34495e; 
+  color: #34495e;
+  text-align: right;
 }
 
 .el-row {
@@ -66,31 +77,10 @@ h1 {
 .logo-container {
   display: flex;
   align-items: center;
-  margin-left:15px;
-}
-
-.logo {
-  max-width: 80px;
-  height: auto;
-  margin: 0 10px;
-}
-
-h1 {
-  font-size: 1.5rem;
-  margin: 0;
-  white-space: nowrap;
-}
-
-.time-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute;
-  right: 10px;
+  margin-left: 15px;
 }
 
 .clock {
   font-size: 18px;
 }
 </style>
-  
