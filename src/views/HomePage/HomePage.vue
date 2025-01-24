@@ -6,6 +6,7 @@
     <hr />
     <div class="ss">
       <h1 class="Name">CÔNG TY TNHH TỶ BÁCH 亿伯</h1>
+            <!-- <h1 class="Name">億柏責任有限公司</h1> -->
     </div>
    
     <hr />
