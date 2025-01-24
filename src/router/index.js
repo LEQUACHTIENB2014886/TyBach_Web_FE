@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Homepage from '../views/HomePage.vue'; // Đảm bảo đúng tên file
+import Homepage from '../views/HomePage.vue'; 
 import Overview from '../views/Introduce/Overview.vue';
 import DevelopmentHistory from '../views/Introduce/DevelopmentHistory.vue';
 import LaborRights from '../views/SocialResponsibility/LaborRights.vue';
