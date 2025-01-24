@@ -72,9 +72,6 @@
 .imgKCN:hover {
   transform: scale(1.006);
 }
-.Name2 {
-  text-align: center;
-}
 
 .Name {
   font-size: 56px;
@@ -89,12 +86,7 @@
 .Name2 {
   font-size: 50px;
   font-style: italic;
-  transition: transform 0.3s ease-in-out;
-  /* margin-top: -20px; */
-}
-
-.Name2:hover {
-  transform: scale(1.03);
+  text-align: center;
 }
 
 .Mobai {
