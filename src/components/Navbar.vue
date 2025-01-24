@@ -5,116 +5,134 @@
     mode="horizontal"
     :popper-offset="16"
   >
-    <el-menu-item index="1" @click="$router.push('/')">Trang chủ</el-menu-item>
+    <el-menu-item index="1" @click="$router.push('/')">{{ $t('home') }}</el-menu-item>
 
     <el-sub-menu index="2">
-      <template #title>Giới thiệu</template>
-      <el-menu-item index="2-1" @click="$router.push('/introduce/overview')"
-        >Giới thiệu chung</el-menu-item
-      >
+      <template #title>{{ $t('introduce') }}</template>
+      <el-menu-item index="2-1" @click="$router.push('/introduce/overview')">
+        {{ $t('general_intro') }}
+      </el-menu-item>
       <el-menu-item
         index="2-2"
         @click="$router.push('/introduce/development-history')"
-        >Lịch sự phát triển</el-menu-item
       >
+        {{ $t('history') }}
+      </el-menu-item>
     </el-sub-menu>
 
     <el-sub-menu index="3">
-      <template #title>Trách nhiệm Xã hội</template>
+      <template #title>{{ $t('social_responsibility') }}</template>
       <el-menu-item
         index="3-1"
         @click="$router.push('/social-responsibility/labor-rights')"
-        >Quyền lợi Lao động</el-menu-item
       >
+        {{ $t('labor_rights') }}
+      </el-menu-item>
       <el-menu-item
         index="3-2"
-        @click="
-          $router.push('/social-responsibility/occupational-health-safety')
-        "
-        >Sức khỏe và An toàn</el-menu-item
+        @click="$router.push('/social-responsibility/occupational-health-safety')"
       >
+        {{ $t('health_safety') }}
+      </el-menu-item>
       <el-menu-item
         index="3-3"
         @click="$router.push('/social-responsibility/environmental-protection')"
-        >Bảo vệ Môi trường</el-menu-item
       >
+        {{ $t('environmental_protection') }}
+      </el-menu-item>
     </el-sub-menu>
 
-    <el-menu-item index="4" @click="$router.push('/branch-activities')"
-      >Hoạt động chi bộ Đảng</el-menu-item
-    >
+    <el-menu-item index="4" @click="$router.push('/branch-activities')">
+      {{ $t('party_cell_activities') }}
+    </el-menu-item>
 
     <el-sub-menu index="5">
-      <template #title>Hoạt động công đoàn</template>
+      <template #title>{{ $t('union_activities') }}</template>
       <el-menu-item
         index="5-1"
         @click="$router.push('/company-activities/union-activities')"
-        >Hoạt động Công đoàn</el-menu-item
       >
+        {{ $t('union_activities') }}
+      </el-menu-item>
       <el-menu-item
         index="5-2"
         @click="$router.push('/company-activities/activity-videos')"
-        >Video Hoạt động</el-menu-item
       >
+        {{ $t('activity_videos') }}
+      </el-menu-item>
     </el-sub-menu>
 
     <el-sub-menu index="6">
-      <template #title>Tuyển dụng</template>
+      <template #title>{{ $t('recruitment') }}</template>
       <el-menu-item
         index="6-1"
         @click="$router.push('/recruitment/job-information')"
-        >Thông tin Tuyển dụng</el-menu-item
       >
+        {{ $t('recruitment_info') }}
+      </el-menu-item>
       <el-menu-item
         index="6-2"
         @click="$router.push('/recruitment/human-resources')"
-        >Nguồn nhân lực</el-menu-item
       >
+        {{ $t('human_resources') }}
+      </el-menu-item>
     </el-sub-menu>
 
     <el-sub-menu index="7">
-      <template #title>Liên hệ</template>
-      <el-menu-item index="7-1" @click="$router.push('/contact/contact-us')"
-        >Liên hệ với Chúng tôi</el-menu-item
-      >
+      <template #title>{{ $t('contact') }}</template>
+      <el-menu-item index="7-1" @click="$router.push('/contact/contact-us')">
+        {{ $t('contact_us') }}
+      </el-menu-item>
       <el-menu-item
         index="7-2"
         @click="$router.push('/contact/submit-application')"
-        >Nộp hồ sơ</el-menu-item
       >
+        {{ $t('submit_application') }}
+      </el-menu-item>
     </el-sub-menu>
 
     <el-sub-menu index="8">
       <template #title>
         <img src="../assets/language.svg" alt="icon" class="icon" />
       </template>
-      <el-menu-item index="8-1">
+      <el-menu-item index="8-1" @click="changeLanguage('vi')">
         <a>
           <img src="../assets/Flag/VietNam_Flag.png" alt="icon" class="icon" />
-          Tiếng Việt
+          {{ $t('vietnamese') }}
         </a>
       </el-menu-item>
-      <el-menu-item index="8-2">
+      <el-menu-item index="8-2" @click="changeLanguage('zh')">
         <a>
           <img src="../assets/Flag/China_Flag.png" alt="icon" class="icon" />
-          中国人
+          {{ $t('chinese') }}
         </a>
       </el-menu-item>
-      <el-menu-item index="8-3">
+      <el-menu-item index="8-3" @click="changeLanguage('en')">
         <a>
           <img
             src="../assets/Flag/United_KingDom_Flag.png"
             alt="icon"
             class="icon"
           />
-          English
+          {{ $t('english') }}
         </a>
       </el-menu-item>
     </el-sub-menu>
   </el-menu>
 </template>
 
-<script setup></script>
+
+
+<script setup>
+import { useI18n } from "vue-i18n";
+
+const { locale } = useI18n();
+
+// Hàm thay đổi ngôn ngữ
+const changeLanguage = (lang) => {
+  locale.value = lang;
+};
+</script>
 
 <style scoped>
 .el-menu-popper-demo {
