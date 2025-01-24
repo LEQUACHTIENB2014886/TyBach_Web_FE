@@ -17,8 +17,13 @@ const messages = {
   zh,
 };
 
+// Lấy locale từ Vuex store
+const initialLocale = store.state.language.locale; // Đảm bảo rằng locale đã được gán giá trị mặc định từ store
+
+// Khởi tạo i18n với locale lấy từ Vuex
 const i18n = createI18n({
-  locale: 'vi',
+  legacy: false, // Dùng Composition API
+  locale: initialLocale,  // Sử dụng giá trị locale từ Vuex
   messages,
 });
 
