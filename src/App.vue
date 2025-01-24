@@ -8,7 +8,7 @@
 <script setup>
 import { ref, watch, onMounted } from "vue";
 import Header from "./components/Header.vue";
-import HeaderTitle from "./components/HeaderTitle.vue";
+import HeaderTitle from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 
 const pageTitle = ref("Trang chủ");
@@ -37,5 +37,13 @@ html,
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #1f2c39;
 }
 </style>

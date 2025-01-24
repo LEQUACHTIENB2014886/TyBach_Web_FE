@@ -51,6 +51,7 @@
         <div class="title_2">
           <el-icon><Clock /></el-icon> Giờ hoạt động
         </div>
+        <el-backtop :right="100" :bottom="100" />
         <div
           class="contact"
           :style="{

@@ -44,7 +44,6 @@ header:hover {
 
 h1 {
   font-size: 1.8rem;
-  color: #2c3e50;
   margin: 0;
   white-space: nowrap;
 }
@@ -83,4 +82,6 @@ h1 {
 .clock {
   font-size: 18px;
 }
+
+
 </style>
