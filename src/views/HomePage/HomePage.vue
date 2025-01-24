@@ -3,10 +3,16 @@
     <div class="KCNBM">
       <img src="../../assets/KCNBM.png" alt="Ảnh KCNBM" class="imgKCN" />
     </div>
-    <hr>
-    <h1 class="Name">CÔNG TY TNHH TỶ BÁCH 亿伯</h1>
-    <hr>
-    <h1 class="Name2">Phạm vi Kinh doanh</h1>
+    <hr />
+    <div class="ss">
+      <h1 class="Name">CÔNG TY TNHH TỶ BÁCH 亿伯</h1>
+    </div>
+   
+    <hr />
+    <div class="ss">
+      <h1 class="Name2">Phạm vi Kinh doanh</h1>
+    </div>
+
     <div class="PMobai">
       <h3 class="Mobai">
         Công ty chúng tôi cung cấp giày, dép từ các thương hiệu nổi tiếng như
@@ -36,7 +42,9 @@
         </div>
       </el-col>
     </el-row>
-    <h1 class="Name2">Quyền lợi Lao động</h1>
+    <div class="ss">
+      <h1 class="Name2">Quyền lợi Lao động</h1>
+    </div>
     <div class="PMobai">
       <h3 class="Mobai">
         Khi gia nhập công ty, người lao động sẽ được tận hưởng một loạt quyền
@@ -45,7 +53,7 @@
         cùng với những phần quà giá trị và khen thưởng đầy khích lệ.
       </h3>
     </div>
-    <hr>
+    <hr />
   </div>
   <br />
 </template>
@@ -62,6 +70,9 @@
   overflow: hidden;
 }
 
+.ss {
+  text-align: center;
+}
 .imgKCN {
   width: 94%;
   height: 567px;
@@ -79,14 +90,23 @@
   text-align: center;
   letter-spacing: 2px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  padding: 10px 0;
   border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block; 
 }
-
+.Name:hover {
+  transform: scale(1.03);
+}
 .Name2 {
   font-size: 50px;
   font-style: italic;
   text-align: center;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block; 
+}
+
+.Name2:hover {
+  transform: scale(1.03);
 }
 
 .Mobai {
@@ -149,5 +169,4 @@ hr {
   margin: 40px auto;
   width: 1000px;
 }
-
 </style>
