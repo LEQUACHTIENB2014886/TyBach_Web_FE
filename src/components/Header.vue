@@ -8,12 +8,11 @@
         </div>
       </el-col>
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="time-right">
-        {{ currentTime }}
+        {{ currentDay ? $t(currentDay) : "" }}, {{ currentDate }}
       </el-col>
     </el-row>
   </header>
 </template>
-
 <script setup>
 import { computed, onMounted, watch } from "vue";
 import { useStore } from "vuex";
@@ -22,7 +21,8 @@ import { useI18n } from "vue-i18n";
 const store = useStore();
 const { locale } = useI18n();
 
-const currentTime = computed(() => store.getters["clock/currentTime"]);
+const currentDay = computed(() => store.getters["clock/currentDay"]);
+const currentDate = computed(() => store.getters["clock/currentDate"]);
 
 onMounted(() => {
   store.dispatch("clock/updateTime");
@@ -35,6 +35,10 @@ watch(locale, () => {
   store.dispatch("clock/updateTime");
 });
 </script>
+
+
+
+
 
 
 
