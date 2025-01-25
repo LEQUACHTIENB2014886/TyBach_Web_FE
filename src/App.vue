@@ -1,27 +1,34 @@
 <template>
   <Header />
-  <Headertitle @update-language="updatetitle" />
+  <Headertitle @update-language="updateLanguage" />
   <router-view></router-view>
   <Footer />
 </template>
 
 <script setup>
-import { ref, watch} from "vue";
-import Header from "./components/Header.vue";
-import Headertitle from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import { computed, watch } from 'vue';
+import { useStore } from 'vuex';
+import Header from './components/Header.vue';
+import Headertitle from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 
-const pagetitle = ref("Trang chủ");
+const store = useStore();
+const locale = computed(() => store.getters['language/locale']);
 
-const updatetitle = (newtitle) => {
-  pagetitle.value = newtitle;
-  document.title = `${newtitle}`;
+const updateLanguage = (newLang) => {
+  store.dispatch('language/changeLanguage', newLang);
 };
 
-watch(pagetitle, (newtitle) => {
-  document.title = `${newtitle}`;
+const pageTitles = {
+  vi: 'Trang chủ',
+  en: 'Home',
+  zh: '首页'
+};
+watch(locale, (newLocale) => {
+  document.title = pageTitles[newLocale] || 'Trang chủ';
 });
 </script>
+
 
 <style>
 body,

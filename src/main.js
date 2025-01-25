@@ -16,7 +16,7 @@ const messages = {
   en,
   zh,
 };
-const initialLocale = store.state.language.locale; 
+const initialLocale = store.state.language.locale || 'vi'; 
 
 const i18n = createI18n({
   legacy: false, 
