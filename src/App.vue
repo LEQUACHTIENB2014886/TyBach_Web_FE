@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header @update-language="updateLanguage"/>
   <Headertitle @update-language="updateLanguage" />
   <router-view></router-view>
   <Footer />

@@ -5,21 +5,17 @@
     </div>
     <hr />
     <div class="ss">
-      <h1 class="Name">CÔNG TY TNHH TỶ BÁCH</h1>
-            <!-- <h1 class="Name">億柏責任有限公司</h1> -->
+      <h1 class="Name">{{ $t("ct") }}</h1>
     </div>
-   
+
     <hr />
     <div class="ss">
-      <h1 class="Name2">Phạm vi Kinh doanh</h1>
+      <h1 class="Name2">{{ $t("hp1") }}</h1>
     </div>
 
     <div class="PMobai">
       <h3 class="Mobai">
-        Công ty chúng tôi cung cấp giày, dép từ các thương hiệu nổi tiếng như
-        Hoka, New Balance và Uniqlo với sự đa dạng về chất lượng và phong cách.
-        Với thiết kế hiện đại và công nghệ tiên tiến, các sản phẩm này mang lại
-        sự thoải mái và hỗ trợ cho người sử dụng trong mọi hoạt động.
+        {{ $t("hp2") }}
       </h3>
     </div>
     <el-row class="Cuongga">
@@ -44,14 +40,11 @@
       </el-col>
     </el-row>
     <div class="ss">
-      <h1 class="Name2">Quyền lợi Lao động</h1>
+      <h1 class="Name2">{{ $t("hp3") }}</h1>
     </div>
     <div class="PMobai">
       <h3 class="Mobai">
-        Khi gia nhập công ty, người lao động sẽ được tận hưởng một loạt quyền
-        lợi hấp dẫn, bao gồm chương trình đào tạo bài bản để nâng cao tay nghề.
-        Ngoài ra, còn nhiều khoản phụ cấp, chế độ bảo hiểm, tăng lương định kỳ,
-        cùng với những phần quà giá trị và khen thưởng đầy khích lệ.
+        {{ $t("hp4") }}
       </h3>
     </div>
     <hr />
@@ -60,7 +53,18 @@
 </template>
 
 <script setup>
+import { useI18n } from "vue-i18n";
+import { watch } from "vue";
+
+const { locale } = useI18n();
+
+watch(locale, () => {
+  updateHomapage();
+});
+
+const updateHomapage = () => {};
 </script>
+
 
 <style scoped>
 .KCNBM {
@@ -91,10 +95,10 @@
   text-align: center;
   letter-spacing: 2px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  margin:-5px 0;
+  margin: -5px 0;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
-  display: inline-block; 
+  display: inline-block;
 }
 .Name:hover {
   transform: scale(1.03);
@@ -104,7 +108,7 @@
   font-style: italic;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .Name2:hover {

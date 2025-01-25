@@ -2,41 +2,15 @@
   <footer>
     <el-row>
       <el-col :span="2"></el-col>
-      <el-col :span="5" class="ft">
-        <div class="title">Giới thiệu</div>
-        <div class="content">Quá trình lịch sử</div>
-        <div class="content">Giá trị cốt lõi</div>
-      </el-col>
-      <el-col :span="5" class="ft">
-        <div class="title">Trách nhiệm xã hội</div>
-        <div class="content">Quyền lợi lao động</div>
-        <div class="content">Sức khỏe và An toàn</div>
-        <div class="content">Bảo vệ Môi trường</div>
-        <div class="content">Hoạt động Chi bộ Đảng</div>
-        <div class="content">Hoạt động Công đoàn</div>
-      </el-col>
-      <el-col :span="5" class="ft">
-        <div class="title">Tuyển dụng</div>
-        <div class="content">Nguồn nhân lực</div>
-      </el-col>
-      <el-col :span="5" class="ft">
-        <div class="title">Liên hệ</div>
-        <div class="content">Nộp hồ sơ</div>
-      </el-col>
-      <el-col :span="2"></el-col>
-    </el-row>
-    <hr />
-    <el-row class="ff">
-      <el-col :span="2"></el-col>
       <el-col :span="8" class="ft">
         <div class="title_2">
-          <el-icon><Phone /></el-icon> Số điện thoại liên hệ
+          <el-icon><Phone /></el-icon> {{ t("sdt") }}
         </div>
         <div class="contact">+84 270 375 2619</div>
         <div class="contact">+84 270 389 0878</div>
         <hr />
         <div class="title_2">
-          <el-icon><Location /></el-icon> Địa chỉ
+          <el-icon><Location /></el-icon> {{ t("dc") }}
         </div>
         <div class="contact">
           Lô D - KCN Bình Minh, ấp Mỹ Hưng 2, xã Mỹ Hòa, thị xã Bình Minh, tỉnh
@@ -44,21 +18,21 @@
         </div>
         <hr />
         <div class="title_2">
-          <el-icon><Message /></el-icon> Email
+          <el-icon><Message /></el-icon> {{ t("em") }}
         </div>
         <div class="contact">tuyendung@tybach.com.vn</div>
         <hr />
         <div class="title_2">
-          <el-icon><Clock /></el-icon> Giờ hoạt động
+          <el-icon><Clock /></el-icon> {{ t("h") }}
         </div>
         <el-backtop :right="100" :bottom="100" />
         <div
           class="contact"
           :style="{
             color:
-              operatingStatus === 'Đang mở cửa'
+              operatingStatus === t('mc')
                 ? '#7FFF00'
-                : operatingStatus === 'Đang chuẩn bị'
+                : operatingStatus === t('cb')
                 ? '#FFA500'
                 : '#DC143C',
           }"
@@ -69,14 +43,18 @@
       <el-col :span="2"></el-col>
       <el-col :span="10">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.213556105925!2d106.6296673153505!3d10.77376526194847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fcf6cf1f01b%3A0xab7273613d4e0184!2zQ8O0bmcgdHkgVE7DqyB0xqFhY8QgxayOiAo4bmF0)5!5e0!3m2!1sen!2s!4v1677580073786!5m2!1sen!2s"
+          :src="`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.213556105925!2d106.6296673153505!3d10.77376526194847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fcf6cf1f01b%3A0xab7273613d4e0184!2zQ8O0bmcgdHkgVE7DqyB0xqFhY8QgxayOiAo4bmF0)5!5e0!3m2!1sen!2s!4v1677580073786!5m2!1sen!2s${
+            locale === 'zh' ? 'zh' : locale === 'en' ? 'en' : 'vi'
+          }!2sus!4v1692759592602!5m2!1s${
+            locale === 'zh' ? 'zh' : locale === 'en' ? 'en' : 'vi'
+          }!2sus`"
           width="100%"
           height="100%"
           style="border: 0"
           allowfullscreen=""
           loading="lazy"
           class="ggmap"
-        ></iframe>
+        />
       </el-col>
       <el-col :span="2"></el-col>
     </el-row>
@@ -87,9 +65,22 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+import { watch } from "vue";
+
+const { t, locale, setLocale } = useI18n();
 
 const operatingStatus = ref("");
 const isOpen = ref(false);
+
+const changeLanguage = (language) => {
+  setLocale(language);
+  updateOperatingStatus();
+};
+
+watch(locale, () => {
+  updateOperatingStatus();
+});
 
 const updateOperatingStatus = () => {
   const now = new Date();
@@ -102,13 +93,13 @@ const updateOperatingStatus = () => {
   const closingTime = 16 * 60 + 30;
 
   if (currentTime >= preparingTimeStart && currentTime < preparingTimeEnd) {
-    operatingStatus.value = "Đang chuẩn bị";
+    operatingStatus.value = t("cb");
     isOpen.value = false;
   } else if (currentTime >= openingTime && currentTime < closingTime) {
-    operatingStatus.value = "Đang mở cửa";
+    operatingStatus.value = t("mc");
     isOpen.value = true;
   } else {
-    operatingStatus.value = "Đóng cửa (Hoạt động từ 07h30 - 16h30)";
+    operatingStatus.value = t("dca");
     isOpen.value = false;
   }
 };
