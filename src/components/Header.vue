@@ -4,7 +4,7 @@
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="logo-container">
           <img src="../assets/logo.png" class="logo" alt="logo" />
-          <h1>Công ty TNHH Tỷ Bách 亿伯</h1>
+          <h1>Công ty TNHH Tỷ Bách</h1>
         </div>
       </el-col>
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="time-right">

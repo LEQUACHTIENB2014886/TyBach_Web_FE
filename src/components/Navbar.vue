@@ -5,18 +5,21 @@
     mode="horizontal"
     :popper-offset="16"
   >
-    <el-menu-item index="1" @click="$router.push('/')">{{
-      $t("home")
-    }}</el-menu-item>
+    <el-menu-item index="1" @click="navigateTo($t('home'), '/')">
+      {{ $t("home") }}
+    </el-menu-item>
 
     <el-sub-menu index="2">
       <template #title>{{ $t("introduce") }}</template>
-      <el-menu-item index="2-1" @click="$router.push('/introduce/overview')">
+      <el-menu-item
+        index="2-1"
+        @click="navigateTo($t('general_intro'), '/introduce/overview')"
+      >
         {{ $t("general_intro") }}
       </el-menu-item>
       <el-menu-item
         index="2-2"
-        @click="$router.push('/introduce/development-history')"
+        @click="navigateTo($t('history'), '/introduce/development-history')"
       >
         {{ $t("history") }}
       </el-menu-item>
@@ -26,27 +29,40 @@
       <template #title>{{ $t("social_responsibility") }}</template>
       <el-menu-item
         index="3-1"
-        @click="$router.push('/social-responsibility/labor-rights')"
+        @click="
+          navigateTo($t('labor_rights'), '/social-responsibility/labor-rights')
+        "
       >
         {{ $t("labor_rights") }}
       </el-menu-item>
       <el-menu-item
         index="3-2"
         @click="
-          $router.push('/social-responsibility/occupational-health-safety')
+          navigateTo(
+            $t('health_safety'),
+            '/social-responsibility/occupational-health-safety'
+          )
         "
       >
         {{ $t("health_safety") }}
       </el-menu-item>
       <el-menu-item
         index="3-3"
-        @click="$router.push('/social-responsibility/environmental-protection')"
+        @click="
+          navigateTo(
+            $t('environmental_protection'),
+            '/social-responsibility/environmental-protection'
+          )
+        "
       >
         {{ $t("environmental_protection") }}
       </el-menu-item>
     </el-sub-menu>
 
-    <el-menu-item index="4" @click="$router.push('/branch-activities')">
+    <el-menu-item
+      index="4"
+      @click="navigateTo($t('party_cell_activities'), '/branch-activities')"
+    >
       {{ $t("party_cell_activities") }}
     </el-menu-item>
 
@@ -54,13 +70,23 @@
       <template #title>{{ $t("union_activities") }}</template>
       <el-menu-item
         index="5-1"
-        @click="$router.push('/company-activities/union-activities')"
+        @click="
+          navigateTo(
+            $t('union_activities'),
+            '/company-activities/union-activities'
+          )
+        "
       >
         {{ $t("union_activities") }}
       </el-menu-item>
       <el-menu-item
         index="5-2"
-        @click="$router.push('/company-activities/activity-videos')"
+        @click="
+          navigateTo(
+            $t('activity_videos'),
+            '/company-activities/activity-videos'
+          )
+        "
       >
         {{ $t("activity_videos") }}
       </el-menu-item>
@@ -70,13 +96,17 @@
       <template #title>{{ $t("recruitment") }}</template>
       <el-menu-item
         index="6-1"
-        @click="$router.push('/recruitment/job-information')"
+        @click="
+          navigateTo($t('recruitment_info'), '/recruitment/job-information')
+        "
       >
         {{ $t("recruitment_info") }}
       </el-menu-item>
       <el-menu-item
         index="6-2"
-        @click="$router.push('/recruitment/human-resources')"
+        @click="
+          navigateTo($t('human_resources'), '/recruitment/human-resources')
+        "
       >
         {{ $t("human_resources") }}
       </el-menu-item>
@@ -84,16 +114,22 @@
 
     <el-sub-menu index="7">
       <template #title>{{ $t("contact") }}</template>
-      <el-menu-item index="7-1" @click="$router.push('/contact/contact-us')">
+      <el-menu-item
+        index="7-1"
+        @click="navigateTo($t('contact_us'), '/contact/contact-us')"
+      >
         {{ $t("contact_us") }}
       </el-menu-item>
       <el-menu-item
         index="7-2"
-        @click="$router.push('/contact/submit-application')"
+        @click="
+          navigateTo($t('submit_application'), '/contact/submit-application')
+        "
       >
         {{ $t("submit_application") }}
       </el-menu-item>
     </el-sub-menu>
+
     <el-sub-menu index="8">
       <template #title>
         <img src="../assets/language.svg" alt="icon" class="icon" />
@@ -125,14 +161,42 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
+import { ref, watch, defineEmits } from "vue";
 
-const { t, locale } = useI18n(); 
+const { t, locale } = useI18n();
+const router = useRouter();
+const emit = defineEmits(["update-title"]);
+const currentTitleKey = ref("home");
+
+const navigateTo = (titleKey, path) => {
+  currentTitleKey.value = titleKey;
+  updateTitle();
+  router.push(path);
+};
+
+const updateTitle = () => {
+  emit("update-title", t(currentTitleKey.value));
+};
+
+watch(locale, () => {
+  updateTitle();
+});
 
 const changeLanguage = (lang) => {
-  locale.value = lang; 
+  locale.value = lang;
 };
 </script>
+
+<style scoped>
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+</style>
+
 <style scoped>
 .el-menu-popper-demo {
   max-width: 100%;
@@ -154,6 +218,4 @@ const changeLanguage = (lang) => {
   width: 22px;
   height: 100%;
 }
-
-
 </style>

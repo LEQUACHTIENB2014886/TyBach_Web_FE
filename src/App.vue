@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <HeaderTitle />
+  <HeaderTitle @update-title="updatePageTitle" />
   <router-view></router-view>
   <Footer />
 </template>
@@ -13,12 +13,13 @@ import Footer from "./components/Footer.vue";
 
 const pageTitle = ref("Trang chủ");
 
-watch(pageTitle, (newTitle) => {
-  document.title = `${newTitle} | TyBach`;
-});
+const updatePageTitle = (newTitle) => {
+  pageTitle.value = newTitle;
+  document.title = `${newTitle}`;
+};
 
-onMounted(() => {
-  document.title = `${pageTitle.value} | TyBach`;
+watch(pageTitle, (newTitle) => {
+  document.title = `${newTitle}`;
 });
 </script>
 
