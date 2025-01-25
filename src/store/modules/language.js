@@ -1,19 +1,19 @@
 // store/modules/language.js
 export default {
   state: () => ({
-    locale: 'vi',  // Đảm bảo giá trị mặc định là chuỗi hợp lệ
+    locale: 'vi', 
   }),
   mutations: {
     setLocale(state, locale) {
-      state.locale = locale;  // Lưu trữ locale dưới dạng chuỗi
+      state.locale = locale;
     },
   },
   actions: {
     changeLanguage({ commit }, lang) {
-      commit('setLocale', lang);  // Thay đổi locale thông qua mutation
+      commit('setLocale', lang);  
     },
   },
   getters: {
-    locale: (state) => state.locale,  // Trả về locale từ state
+    locale: (state) => state.locale,  
   },
 };
