@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from "vue";
+import { ref, watch} from "vue";
 import Header from "./components/Header.vue";
 import HeaderTitle from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
