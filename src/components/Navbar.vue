@@ -98,21 +98,21 @@ import { ref, watch} from "vue";
 
 const { t, locale } = useI18n();
 const router = useRouter();
-const emit = defineEmits(["update-title"]);
-const currentTitleKey = ref("home");
+const emit = defineEmits(["update-language"]);
+const currentLanguageKey = ref("home");
 
 const navigateTo = (titleKey, path) => {
-  currentTitleKey.value = titleKey;
-  updateTitle();
+  currentLanguageKey.value = titleKey;
+  updateLanguage();
   router.push(path);
 };
 
-const updateTitle = () => {
-  emit("update-title", t(currentTitleKey.value));
+const updateLanguage = () => {
+  emit("update-language", t(currentLanguageKey.value));
 };
 
 watch(locale, () => {
-  updateTitle();
+  updateLanguage();
 });
 
 const changeLanguage = (lang) => {

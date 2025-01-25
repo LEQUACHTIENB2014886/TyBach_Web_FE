@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <HeaderTitle @update-title="updatePageTitle" />
+  <Headertitle @update-language="updatetitle" />
   <router-view></router-view>
   <Footer />
 </template>
@@ -8,18 +8,18 @@
 <script setup>
 import { ref, watch} from "vue";
 import Header from "./components/Header.vue";
-import HeaderTitle from "./components/Navbar.vue";
+import Headertitle from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 
-const pageTitle = ref("Trang chủ");
+const pagetitle = ref("Trang chủ");
 
-const updatePageTitle = (newTitle) => {
-  pageTitle.value = newTitle;
-  document.title = `${newTitle}`;
+const updatetitle = (newtitle) => {
+  pagetitle.value = newtitle;
+  document.title = `${newtitle}`;
 };
 
-watch(pageTitle, (newTitle) => {
-  document.title = `${newTitle}`;
+watch(pagetitle, (newtitle) => {
+  document.title = `${newtitle}`;
 });
 </script>
 
