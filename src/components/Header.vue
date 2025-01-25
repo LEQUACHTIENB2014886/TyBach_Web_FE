@@ -4,7 +4,7 @@
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="logo-container">
           <img src="../assets/logo.png" class="logo" alt="logo" />
-          <h1>Công ty TNHH Tỷ Bách</h1>
+          <h1>{{ $t("ct") }}</h1>
         </div>
       </el-col>
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="time-right">
@@ -15,10 +15,12 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed, onMounted, watch } from "vue";
 import { useStore } from "vuex";
+import { useI18n } from "vue-i18n";
 
 const store = useStore();
+const { locale } = useI18n();
 
 const currentTime = computed(() => store.getters["clock/currentTime"]);
 
@@ -28,7 +30,13 @@ onMounted(() => {
     store.dispatch("clock/updateTime");
   }, 1000);
 });
+
+watch(locale, () => {
+  store.dispatch("clock/updateTime");
+});
 </script>
+
+
 
 <style scoped>
 header {

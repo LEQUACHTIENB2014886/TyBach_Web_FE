@@ -164,8 +164,6 @@ const navigateTo = (titleKey, path) => {
 };
 
 const updateTitle = () => {
-  store.dispatch("language/changeLanguage", locale.value);
-  store.commit("language/setLocale", locale.value);
   document.title = t(currentLanguageKey.value);
 };
 
@@ -174,7 +172,6 @@ watch(locale, () => {
 });
 
 const changeLanguage = (lang) => {
-  store.dispatch("language/changeLanguage", lang);
   locale.value = lang;
   updateTitle();
 };
