@@ -163,7 +163,7 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
-import { ref, watch, defineEmits } from "vue";
+import { ref, watch} from "vue";
 
 const { t, locale } = useI18n();
 const router = useRouter();
