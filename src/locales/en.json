@@ -1,4 +1,5 @@
 {
+  "key": "en",
   "home": "Home",
   "introduce": "About",
   "general_intro": "General Introduction",
@@ -37,6 +38,5 @@
   "h": "Hours of operation",
   "mc": "Opening the door",
   "cb": "Preparing",
-  "dca": "Closed (Open from 07:30 - 16:30)",
-  "nn": "en"
+  "dca": "Closed (Open from 07:30 - 16:30)"
 }

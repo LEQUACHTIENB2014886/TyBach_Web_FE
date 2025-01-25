@@ -1,4 +1,5 @@
 {
+  "key": "vi",
   "home": "Trang chủ",
   "introduce": "Giới thiệu",
   "general_intro": "Giới thiệu chung",
@@ -37,6 +38,6 @@
   "h": "Giờ hoạt động",
   "mc": "Đang mở cửa",
   "cb": "Đang chuẩn bị",
-  "dca": "Đóng cửa (Hoạt động từ 07:30 - 16:30)",
-  "nn": "vi"
+  "dca": "Đóng cửa (Hoạt động từ 07:30 - 16:30)"
+  
 }
