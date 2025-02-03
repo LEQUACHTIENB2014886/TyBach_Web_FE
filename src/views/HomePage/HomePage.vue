@@ -7,39 +7,27 @@
     <div class="ss">
       <h1 class="Name">{{ $t("ct") }}</h1>
     </div>
-
     <hr />
     <div class="ss">
       <h1 class="Name2">{{ $t("hp1") }}</h1>
     </div>
-
     <div class="PMobai">
       <h3 class="Mobai">
         {{ $t("hp2") }} <br />
         {{ $t("hp2_2") }}
       </h3>
     </div>
-    <el-row class="Cuongga">
-      <el-col :span="6">
-        <div class="nb grid-content ep-bg-purple">
-          <img
-            src="../../assets/LogoShoes/newbalance.png"
-            alt="nb"
-            class="logo"
-          />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="hoka grid-content ep-bg-purple">
-          <img src="../../assets/LogoShoes/hoka.png" alt="hk" class="logo" />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="uniqlo grid-content ep-bg-purple">
-          <img src="../../assets/LogoShoes/uniqlo.png" alt="un" class="logo" />
-        </div>
-      </el-col>
-    </el-row>
+    <div class="Cuongga">
+      <div class="grid-content">
+        <img src="../../assets/LogoShoes/newbalance.png" alt="nb" class="logo nb" />
+      </div>
+      <div class="grid-content">
+        <img src="../../assets/LogoShoes/hoka.png" alt="hk" class="logo hoka" />
+      </div>
+      <div class="grid-content">
+        <img src="../../assets/LogoShoes/uniqlo.png" alt="un" class="logo uniqlo" />
+      </div>
+    </div>
     <div class="ss">
       <h1 class="Name2">{{ $t("hp3") }}</h1>
     </div>
@@ -66,7 +54,6 @@ watch(locale, () => {
 
 const updateHomapage = () => {};
 </script>
-
 
 <style scoped>
 .KCNBM {
@@ -138,49 +125,38 @@ h3 {
   transform: scale(1.003);
 }
 
-.el-row {
-  margin-bottom: 20px;
-}
-
-.el-row:last-child {
-  margin-bottom: 0;
-}
-
-.el-col {
-  border-radius: 4px;
+.Cuongga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 .grid-content {
-  border-radius: 4px;
-  min-height: 36px;
+  margin: 50px;
 }
 
 .logo {
-  max-height: auto;
   transition: transform 0.3s ease-in-out;
+  max-width: 100%;
+  height: auto;
 }
 
 .logo:hover {
   transform: scale(1.086);
 }
 
-.hoka .logo {
-  max-width: 470px;
-  transition: transform 0.3s ease-in-out;
+.nb {
+  width: 350px;
 }
 
-.uniqlo .logo{
-  max-width: 250px;
+.hoka {
+  width: 450px;
 }
 
-.nb .logo{
-  max-width: 350px;
-}
-.Cuongga {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.uniqlo {
+  width: 270px;
 }
 
 hr {
@@ -191,7 +167,4 @@ hr {
   margin: 40px auto;
   width: 1000px;
 }
-
-
-
 </style>
