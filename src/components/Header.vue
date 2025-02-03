@@ -1,18 +1,19 @@
 <template>
   <header>
     <el-row :gutter="20" class="flex-center">
-      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
+      <el-col :xs="16" :sm="16" :md="16" :lg="16" :xl="16">
         <div class="logo-container">
           <img src="../assets/logo.png" class="logo" alt="logo" />
           <h1>{{ $t("ct") }}</h1>
         </div>
       </el-col>
-      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="time-right">
+      <el-col :xs="8" :sm="8" :md="8" :lg="8" :xl="8" class="time-right">
         {{ currentDay ? $t(currentDay) : "" }}, {{ currentDate }}
       </el-col>
     </el-row>
   </header>
 </template>
+
 <script setup>
 import { computed, onMounted, watch } from "vue";
 import { useStore } from "vuex";
@@ -36,12 +37,6 @@ watch(locale, () => {
 });
 </script>
 
-
-
-
-
-
-
 <style scoped>
 header {
   background-color: rgb(244, 246, 248);
@@ -55,7 +50,7 @@ header:hover {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 2.4rem;
   font-weight: bold;
   text-align: center;
   letter-spacing: 2px;
@@ -63,7 +58,7 @@ h1 {
   padding: 10px 0;
   border-radius: 10px;
   margin: 0;
-  white-space: nowrap;
+  max-width: 100%;
 }
 
 .logo {
@@ -73,9 +68,13 @@ h1 {
 }
 
 .time-right {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #34495e;
   text-align: right;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .el-row {
@@ -97,7 +96,21 @@ h1 {
   margin-left: 15px;
 }
 
-.clock {
-  font-size: 18px;
+@media (min-width: 2000px) {
+  .el-row {
+    flex-direction: column;
+  }
+
+  .el-col {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .time-right {
+    font-size: 1.2rem;
+  }
 }
 </style>
