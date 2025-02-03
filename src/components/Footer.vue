@@ -217,8 +217,13 @@ footer:hover {
   margin-bottom: 0.5rem;
   padding-top: 10px;
   text-align: center;
+  transition: transform 0.3s ease-in-out;
 }
 
+.title:hover {
+  color: #00bcd4;
+  transform: scale(1.15);
+}
 .title_2 {
   font-weight: bold;
   font-size: 1.4em;
@@ -232,14 +237,12 @@ footer:hover {
   cursor: pointer;
   transition: color 0.3s ease;
   text-align: center;
+  transition: transform 0.3s ease-in-out;
 }
 
 .content:hover {
   color: #00bcd4;
-}
-
-.title:hover {
-  color: #00bcd4;
+  transform: scale(1.15);
 }
 
 hr {
@@ -258,7 +261,7 @@ hr {
   margin: 25px 0;
 }
 
-.startfooter{
+.startfooter {
   justify-content: center;
 }
 </style>
