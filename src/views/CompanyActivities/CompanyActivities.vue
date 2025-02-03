@@ -1,12 +1,9 @@
-
 <template>
-  <div>
-    <h1>ContactUs.vue</h1>
-  </div>
+  <div><h1>CompanyActivities.vue</h1></div>
 </template>
 
-<script setup>
-
+<script>
+export default {};
 </script>
 
 <style scoped>

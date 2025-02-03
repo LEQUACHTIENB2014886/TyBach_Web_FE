@@ -1,5 +1,6 @@
 <template>
-  HumanResources.vue
+  <div><h1>  HumanResources.vue</h1></div>
+
 </template>
 
 <script>
@@ -8,6 +9,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+h1 {
+  height: 700px;
+}
 </style>

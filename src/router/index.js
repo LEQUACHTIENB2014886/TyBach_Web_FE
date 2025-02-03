@@ -6,7 +6,7 @@ import LaborRights from '../views/SocialResponsibility/LaborRights.vue';
 import OccupationalHealthSafety from '../views/SocialResponsibility/OccupationalHealthSafety.vue';
 import EnvironmentalProtection from '../views/SocialResponsibility/EnvironmentalProtection.vue';
 import PartyActivities from '../views/BranchActivities/PartyActivities.vue';
-import UnionActivities from '../views/CompanyActivities/UnionActivities.vue';
+import CompanyActivities from '../views/CompanyActivities/CompanyActivities.vue';
 import ActivityVideos from '../views/CompanyActivities/ActivityVideos.vue';
 import JobInformation from '../views/Recruitment/JobInformation.vue';
 import HumanResources from '../views/Recruitment/HumanResources.vue';
@@ -21,7 +21,7 @@ const routes = [
   { path: '/social-responsibility/occupational-health-safety', component: OccupationalHealthSafety },
   { path: '/social-responsibility/environmental-protection', component: EnvironmentalProtection },
   { path: '/branch-activities', component: PartyActivities },
-  { path: '/company-activities/union-activities', component: UnionActivities },
+  { path: '/company-activities/company-activities', component: CompanyActivities },
   { path: '/company-activities/activity-videos', component: ActivityVideos },
   { path: '/recruitment/job-information', component: JobInformation },
   { path: '/recruitment/human-resources', component: HumanResources },

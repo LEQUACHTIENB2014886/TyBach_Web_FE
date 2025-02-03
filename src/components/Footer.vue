@@ -3,30 +3,63 @@
     <el-row>
       <el-col :span="2"></el-col>
       <el-col :span="5" class="ft">
-        <div class="title">Giới thiệu</div>
-        <div class="content">Quá trình lịch sử</div>
-        <div class="content">Giá trị cốt lõi</div>
+        <div class="title">{{ $t("introduce") }}</div>
+        <div class="content" @click="navigateTo('/introduce/overview')">
+          {{ $t("general_intro") }}
+        </div>
+        <div class="content" @click="navigateTo('/introduce/development-history')">
+          {{ $t("history") }}
+        </div>
       </el-col>
       <el-col :span="5" class="ft">
-        <div class="title">Trách nhiệm xã hội</div>
-        <div class="content">Quyền lợi lao động</div>
-        <div class="content">Sức khỏe và An toàn</div>
-        <div class="content">Bảo vệ Môi trường</div>
-        <div class="content">Hoạt động Chi bộ Đảng</div>
-        <div class="content">Hoạt động Công đoàn</div>
+        <div class="title">{{ $t("social_responsibility") }}</div>
+        <div
+          class="content"
+          @click="navigateTo('/social-responsibility/occupational-health-safety')"
+        >
+          {{ $t("health_safety") }}
+        </div>
+        <div
+          class="content"
+          @click="navigateTo('/social-responsibility/environmental-protection')"
+        >
+          {{ $t("environmental_protection") }}
+        </div>
+        <div class="content" @click="navigateTo('/branch-activities')">
+          {{ $t("party_cell_activities") }}
+        </div>
+        <div
+          class="content"
+          @click="navigateTo('/company-activities/company-activities')"
+        >
+          {{ $t("company_activities") }}
+        </div>
+        <div
+          class="content"
+          @click="navigateTo('/company-activities/activity-videos')"
+        >
+          {{ $t("activity_videos") }}
+        </div>
       </el-col>
       <el-col :span="5" class="ft">
-        <div class="title">Tuyển dụng</div>
-        <div class="content">Nguồn nhân lực</div>
+        <div class="title">{{ $t("recruitment") }}</div>
+        <div class="content" @click="navigateTo('/recruitment/job-information')">
+          {{ $t("recruitment_info") }}
+        </div>
+        <div class="content" @click="navigateTo('/recruitment/human-resources')">
+          {{ $t("human_resources") }}
+        </div>
       </el-col>
       <el-col :span="5" class="ft">
-        <div class="title">Liên hệ</div>
-        <div class="content">Nộp hồ sơ</div>
+        <div class="title">{{ $t("contact") }}</div>
+        <div class="content" @click="navigateTo('/contact/submit-application')">
+          {{ $t("submit_application") }}
+        </div>
       </el-col>
       <el-col :span="2"></el-col>
     </el-row>
     <hr />
-    <el-row style="margin: 30px 0px">
+    <el-row class="endfooter">
       <el-col :span="2"></el-col>
       <el-col :span="8" class="ft">
         <div class="title_2">
@@ -90,14 +123,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
+import { ref, onMounted } from "vue";
 import { watch } from "vue";
 
 const { t, locale, setLocale } = useI18n();
+const router = useRouter();
 
 const operatingStatus = ref("");
 const isOpen = ref(false);
+
+const navigateTo = (path) => {
+  router.push(path);
+};
 
 const changeLanguage = (language) => {
   setLocale(language);
@@ -159,6 +198,7 @@ footer:hover {
 .ft {
   text-align: left;
   color: white;
+  cursor: pointer;
 }
 
 .title {
@@ -170,12 +210,20 @@ footer:hover {
 
 .title_2 {
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.4em;
+  margin-bottom: 0.5rem;
+  padding-top: 10px;
 }
 
 .content {
   margin: 1rem 0 1rem 1px;
   font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.content:hover {
+  color: #00bcd4;
 }
 
 hr {
@@ -189,5 +237,8 @@ hr {
 
 .ggmap {
   border-radius: 5px;
+}
+.endfooter{
+  margin:35px 0;
 }
 </style>

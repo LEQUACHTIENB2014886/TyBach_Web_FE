@@ -1,13 +1,15 @@
 <template>
-  123213
+  <div>
+    <h1>ActivityVideos.vue</h1>
+  </div>
 </template>
 
-<script>
-export default {
+<script setup>
 
-}
 </script>
 
-<style>
-
+<style scoped>
+h1 {
+  height: 700px;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>  EnvironmentalProtection.vue</h1>
+    <h1>EnvironmentalProtection.vue</h1>
   </div>
 </template>
 

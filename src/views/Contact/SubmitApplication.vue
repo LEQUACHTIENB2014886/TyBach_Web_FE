@@ -1,13 +1,14 @@
 <template>
-  SubmitApplication.vue
+  <div>
+    <h1>SubmitApplication.vue</h1>
+  </div>
 </template>
 
-<script>
-export default {
-
-}
+<script setup>
 </script>
 
-<style>
-
+<style scoped>
+h1 {
+  height: 700px;
+}
 </style>

@@ -67,14 +67,14 @@
     </el-menu-item>
 
     <el-sub-menu index="5">
-      <template #title>{{ $t("union_activities") }}</template>
+      <template #title>{{ $t("company_activities") }}</template>
       <el-menu-item
         index="5-1"
         @click="
-          navigateTo('union_activities', '/company-activities/union-activities')
+          navigateTo('company_activities', '/company-activities/company-activities')
         "
       >
-        {{ $t("union_activities") }}
+        {{ $t("company_activities") }}
       </el-menu-item>
       <el-menu-item
         index="5-2"
