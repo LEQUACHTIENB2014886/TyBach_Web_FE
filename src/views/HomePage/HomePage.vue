@@ -15,7 +15,8 @@
 
     <div class="PMobai">
       <h3 class="Mobai">
-        {{ $t("hp2") }}
+        {{ $t("hp2") }} <br />
+        {{ $t("hp2_2") }}
       </h3>
     </div>
     <el-row class="Cuongga">
@@ -44,7 +45,8 @@
     </div>
     <div class="PMobai">
       <h3 class="Mobai">
-        {{ $t("hp4") }}
+        {{ $t("hp4") }} <br />
+        {{ $t("hp4_2") }}
       </h3>
     </div>
     <hr />
@@ -75,6 +77,9 @@ const updateHomapage = () => {};
   overflow: hidden;
 }
 
+h3 {
+  font-weight: normal;
+}
 .ss {
   text-align: center;
 }
