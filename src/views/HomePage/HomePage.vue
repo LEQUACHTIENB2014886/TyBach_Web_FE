@@ -21,7 +21,7 @@
     </div>
     <el-row class="Cuongga">
       <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
+        <div class="nb grid-content ep-bg-purple">
           <img
             src="../../assets/LogoShoes/newbalance.png"
             alt="nb"
@@ -35,7 +35,7 @@
         </div>
       </el-col>
       <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
+        <div class="uniqlo grid-content ep-bg-purple">
           <img src="../../assets/LogoShoes/uniqlo.png" alt="un" class="logo" />
         </div>
       </el-col>
@@ -156,7 +156,6 @@ h3 {
 }
 
 .logo {
-  max-width: 350px;
   max-height: auto;
   transition: transform 0.3s ease-in-out;
 }
@@ -165,6 +164,18 @@ h3 {
   transform: scale(1.086);
 }
 
+.hoka .logo {
+  max-width: 470px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.uniqlo .logo{
+  max-width: 250px;
+}
+
+.nb .logo{
+  max-width: 350px;
+}
 .Cuongga {
   display: flex;
   justify-content: center;
@@ -181,9 +192,6 @@ hr {
   width: 1000px;
 }
 
-.hoka .logo {
-  max-width: 450px;
-  transition: transform 0.3s ease-in-out;
-}
+
 
 </style>
