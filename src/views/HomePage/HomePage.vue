@@ -148,7 +148,7 @@ h3 {
 }
 
 .nb {
-  width: 350px;
+  width: 300px;
 }
 
 .hoka {
