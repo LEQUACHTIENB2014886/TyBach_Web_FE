@@ -1,7 +1,7 @@
 <template>
   <footer>
     <el-row class="startfooter">
-      <el-col :span="5" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
+      <el-col :span="6" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("introduce") }}</div>
         <div class="content" @click="navigateTo('/introduce/overview')">
           {{ $t("general_intro") }}
@@ -13,7 +13,7 @@
           {{ $t("history") }}
         </div>
       </el-col>
-      <el-col :span="5" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
+      <el-col :span="6" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("social_responsibility") }}</div>
         <div
           class="content"
@@ -45,7 +45,7 @@
           {{ $t("activity_videos") }}
         </div>
       </el-col>
-      <el-col :span="5" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
+      <el-col :span="6" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("recruitment") }}</div>
         <div
           class="content"
@@ -60,7 +60,7 @@
           {{ $t("human_resources") }}
         </div>
       </el-col>
-      <el-col :span="5" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
+      <el-col :span="6" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("contact") }}</div>
         <div class="content" @click="navigateTo('/contact/submit-application')">
           {{ $t("submit_application") }}
@@ -216,6 +216,7 @@ footer:hover {
   font-size: 1.4em;
   margin-bottom: 0.5rem;
   padding-top: 10px;
+  text-align: center;
 }
 
 .title_2 {
@@ -230,6 +231,7 @@ footer:hover {
   font-size: 1rem;
   cursor: pointer;
   transition: color 0.3s ease;
+  text-align: center;
 }
 
 .content:hover {
@@ -258,6 +260,5 @@ hr {
 
 .startfooter{
   justify-content: center;
-  margin-left: 100px;
 }
 </style>
