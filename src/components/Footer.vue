@@ -82,8 +82,7 @@
       <el-icon><Location /></el-icon> {{ t("dc") }}
     </div>
     <div class="contact">
-      Lô D - KCN Bình Minh, ấp Mỹ Hưng 2, xã Mỹ Hòa, thị xã Bình Minh, tỉnh
-      Vĩnh Long
+      {{ t("dc2") }}
     </div>
     <hr />
     <div class="title_2">
