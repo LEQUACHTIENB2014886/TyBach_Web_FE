@@ -152,11 +152,11 @@ h3 {
 }
 
 .hoka {
-  width: 450px;
+  width: 420px;
 }
 
 .uniqlo {
-  width: 270px;
+  width: 210px;
 }
 
 hr {

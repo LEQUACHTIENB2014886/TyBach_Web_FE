@@ -1,8 +1,7 @@
 <template>
   <footer>
-    <el-row>
-      <el-col :span="2"></el-col>
-      <el-col :span="5" class="ft">
+    <el-row class="startfooter">
+      <el-col :span="5" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("introduce") }}</div>
         <div class="content" @click="navigateTo('/introduce/overview')">
           {{ $t("general_intro") }}
@@ -14,7 +13,7 @@
           {{ $t("history") }}
         </div>
       </el-col>
-      <el-col :span="5" class="ft">
+      <el-col :span="5" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("social_responsibility") }}</div>
         <div
           class="content"
@@ -46,7 +45,7 @@
           {{ $t("activity_videos") }}
         </div>
       </el-col>
-      <el-col :span="5" class="ft">
+      <el-col :span="5" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("recruitment") }}</div>
         <div
           class="content"
@@ -61,14 +60,14 @@
           {{ $t("human_resources") }}
         </div>
       </el-col>
-      <el-col :span="5" class="ft">
+      <el-col :span="5" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("contact") }}</div>
         <div class="content" @click="navigateTo('/contact/submit-application')">
           {{ $t("submit_application") }}
         </div>
       </el-col>
-      <el-col :span="2"></el-col>
     </el-row>
+
     <hr />
     <el-row class="endfooter">
       <el-col :span="2"></el-col>
@@ -85,7 +84,7 @@
         <div class="contact">
           Lô D - KCN Bình Minh, ấp Mỹ Hưng 2, xã Mỹ Hòa, thị xã Bình Minh, tỉnh
           Vĩnh Long
-        </div>       
+        </div>
         <hr />
         <div class="title_2">
           <el-icon><Message /></el-icon> {{ t("em") }}
@@ -255,5 +254,10 @@ hr {
 }
 .endfooter {
   margin: 25px 0;
+}
+
+.startfooter{
+  justify-content: center;
+  margin-left: 100px;
 }
 </style>
