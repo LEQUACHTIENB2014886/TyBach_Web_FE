@@ -7,7 +7,10 @@
         <div class="content" @click="navigateTo('/introduce/overview')">
           {{ $t("general_intro") }}
         </div>
-        <div class="content" @click="navigateTo('/introduce/development-history')">
+        <div
+          class="content"
+          @click="navigateTo('/introduce/development-history')"
+        >
           {{ $t("history") }}
         </div>
       </el-col>
@@ -15,7 +18,9 @@
         <div class="title">{{ $t("social_responsibility") }}</div>
         <div
           class="content"
-          @click="navigateTo('/social-responsibility/occupational-health-safety')"
+          @click="
+            navigateTo('/social-responsibility/occupational-health-safety')
+          "
         >
           {{ $t("health_safety") }}
         </div>
@@ -43,10 +48,16 @@
       </el-col>
       <el-col :span="5" class="ft">
         <div class="title">{{ $t("recruitment") }}</div>
-        <div class="content" @click="navigateTo('/recruitment/job-information')">
+        <div
+          class="content"
+          @click="navigateTo('/recruitment/job-information')"
+        >
           {{ $t("recruitment_info") }}
         </div>
-        <div class="content" @click="navigateTo('/recruitment/human-resources')">
+        <div
+          class="content"
+          @click="navigateTo('/recruitment/human-resources')"
+        >
           {{ $t("human_resources") }}
         </div>
       </el-col>
@@ -74,7 +85,7 @@
         <div class="contact">
           Lô D - KCN Bình Minh, ấp Mỹ Hưng 2, xã Mỹ Hòa, thị xã Bình Minh, tỉnh
           Vĩnh Long
-        </div>
+        </div>       
         <hr />
         <div class="title_2">
           <el-icon><Message /></el-icon> {{ t("em") }}
@@ -226,6 +237,10 @@ footer:hover {
   color: #00bcd4;
 }
 
+.title:hover {
+  color: #00bcd4;
+}
+
 hr {
   border: 1px solid;
   margin: 1rem;
@@ -238,7 +253,7 @@ hr {
 .ggmap {
   border-radius: 5px;
 }
-.endfooter{
-  margin:35px 0;
+.endfooter {
+  margin: 25px 0;
 }
 </style>

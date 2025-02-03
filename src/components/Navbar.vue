@@ -195,12 +195,14 @@ const changeLanguage = (lang) => {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
 }
 
 .el-menu-item img.icon {
   margin-right: 8px;
   vertical-align: middle;
 }
+
 .icon {
   width: 22px;
   height: 100%;
