@@ -2,6 +2,32 @@
   <footer>
     <el-row>
       <el-col :span="2"></el-col>
+      <el-col :span="5" class="ft">
+        <div class="title">Giới thiệu</div>
+        <div class="content">Quá trình lịch sử</div>
+        <div class="content">Giá trị cốt lõi</div>
+      </el-col>
+      <el-col :span="5" class="ft">
+        <div class="title">Trách nhiệm xã hội</div>
+        <div class="content">Quyền lợi lao động</div>
+        <div class="content">Sức khỏe và An toàn</div>
+        <div class="content">Bảo vệ Môi trường</div>
+        <div class="content">Hoạt động Chi bộ Đảng</div>
+        <div class="content">Hoạt động Công đoàn</div>
+      </el-col>
+      <el-col :span="5" class="ft">
+        <div class="title">Tuyển dụng</div>
+        <div class="content">Nguồn nhân lực</div>
+      </el-col>
+      <el-col :span="5" class="ft">
+        <div class="title">Liên hệ</div>
+        <div class="content">Nộp hồ sơ</div>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+    <hr />
+    <el-row style="margin: 30px 0px">
+      <el-col :span="2"></el-col>
       <el-col :span="8" class="ft">
         <div class="title_2">
           <el-icon><Phone /></el-icon> {{ t("sdt") }}

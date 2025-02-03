@@ -30,7 +30,7 @@
         </div>
       </el-col>
       <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
+        <div class="hoka grid-content ep-bg-purple">
           <img src="../../assets/LogoShoes/hoka.png" alt="hk" class="logo" />
         </div>
       </el-col>
@@ -180,4 +180,10 @@ hr {
   margin: 40px auto;
   width: 1000px;
 }
+
+.hoka .logo {
+  max-width: 450px;
+  transition: transform 0.3s ease-in-out;
+}
+
 </style>
