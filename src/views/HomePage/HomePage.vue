@@ -8,12 +8,13 @@
     <div class="KCNBM">
       <img src="../../assets/KCNBM.png" alt="Ảnh KCNBM" class="imgKCN" />
     </div>
-    <div class="ss">
+    <hr />
+    <div class="ss2">
       <h1 class="Name2">{{ $t("hp1") }}</h1>
     </div>
     <div class="PMobai">
       <h3 class="Mobai">
-        {{ $t("hp2") }} <br />
+        {{ $t("hp2") }}
         {{ $t("hp2_2") }}
       </h3>
     </div>
@@ -36,7 +37,7 @@
         />
       </div>
     </div>
-    <div class="ss">
+    <div class="ss2">
       <h1 class="Name2">{{ $t("hp3") }}</h1>
     </div>
     <div class="PMobai">
@@ -78,6 +79,12 @@ h3 {
 .ss {
   text-align: center;
 }
+
+.ss2 {
+  text-align: center;
+  margin-top: -30px;
+}
+
 .imgKCN {
   width: 94%;
   height: 567px;

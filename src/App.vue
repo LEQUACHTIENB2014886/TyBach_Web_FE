@@ -2,9 +2,7 @@
   <div id="app">
     <Header @update-language="updateLanguage" />
     <Headertitle @update-language="updateLanguage" />
-
     <router-view></router-view>
-
     <Footer />
   </div>
 </template>
@@ -39,7 +37,4 @@ watch(locale, (newLocale) => {
   flex-direction: column;
 }
 
-.content {
-  flex: 1;
-}
 </style>
