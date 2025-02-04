@@ -9,7 +9,7 @@
 import { computed, watch } from 'vue';
 import { useStore } from 'vuex';
 import Header from './components/Header.vue';
-import Headertitle from './components/Navbar.vue';
+import Headertitle from './components/Navbar.vue'; 
 import Footer from './components/Footer.vue';
 
 const store = useStore();
@@ -28,7 +28,6 @@ watch(locale, (newLocale) => {
   document.title = pageTitles[newLocale] || 'Trang chủ';
 });
 </script>
-
 
 <style>
 body,
@@ -54,6 +53,7 @@ h4,
 h5 {
   color: #19232d;
 }
+
 * {
   font-family: Roboto;
 }

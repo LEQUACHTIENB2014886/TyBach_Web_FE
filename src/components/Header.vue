@@ -42,6 +42,7 @@ header {
   background-color: rgb(244, 246, 248);
   transition: background-color 0.5s ease, box-shadow 0.5s ease;
   padding: 1rem 0;
+  z-index: 999;
 }
 
 header:hover {

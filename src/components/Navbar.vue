@@ -1,5 +1,5 @@
 <template>
-  <el-menu
+  <el-menu 
     ellipsis
     class="el-menu-popper-demo"
     mode="horizontal"
@@ -190,6 +190,12 @@ const changeLanguage = (lang) => {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 .el-menu-item a {
   display: flex;
