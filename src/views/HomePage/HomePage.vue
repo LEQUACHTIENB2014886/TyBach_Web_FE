@@ -47,8 +47,8 @@
       </h3>
     </div>
     <hr />
+    <br />
   </div>
-  <br />
 </template>
 
 <script setup>

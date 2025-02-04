@@ -3,9 +3,11 @@
     <LoadingOverlay :loading="loading" />
     <Header />
     <Navbar @change-loading="setLoading" />
-    <transition name="fade" mode="out-in">
-      <router-view />
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
     <Footer />
   </div>
 </template>
