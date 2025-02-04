@@ -43,7 +43,7 @@ const openFullScreen2 = () => {
   });
   setTimeout(() => {
     loading.close();
-  }, 2000);
+  }, 500);
 };
 
 const updateLanguage = (newLang) => {
