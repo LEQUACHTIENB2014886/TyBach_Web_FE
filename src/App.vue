@@ -2,7 +2,7 @@
   <div id="app">
     <LoadingOverlay :loading="loading" />
     <Header />
-    <Headertitle @change-loading="setLoading" />
+    <Navbar @change-loading="setLoading" />
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
@@ -13,7 +13,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import Header from "./components/Header.vue";
-import Headertitle from "./components/Navbar.vue";
+import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import LoadingOverlay from "./components/LoadingOverlay.vue";
 
