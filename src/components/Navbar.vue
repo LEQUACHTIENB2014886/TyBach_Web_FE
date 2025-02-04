@@ -179,8 +179,6 @@ const navigateTo = (titleKey, path) => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-
-
 const updateTitle = () => {
   document.title = t(currentLanguageKey.value);
 };

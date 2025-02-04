@@ -24,7 +24,7 @@ defineProps({
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.1s ease;
 }
 
 .spinner {
@@ -47,7 +47,7 @@ defineProps({
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.1s;
 }
 .fade-enter-from,
 .fade-leave-to {
