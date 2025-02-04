@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="KCNBM">
-      <img src="../../assets/KCNBM.png" alt="Ảnh KCNBM" class="imgKCN" />
-    </div>
     <hr />
     <div class="ss">
       <h1 class="Name">{{ $t("ct") }}</h1>
     </div>
     <hr />
+    <div class="KCNBM">
+      <img src="../../assets/KCNBM.png" alt="Ảnh KCNBM" class="imgKCN" />
+    </div>
     <div class="ss">
       <h1 class="Name2">{{ $t("hp1") }}</h1>
     </div>
@@ -19,13 +19,21 @@
     </div>
     <div class="Cuongga">
       <div class="grid-content">
-        <img src="../../assets/LogoShoes/newbalance.png" alt="nb" class="logo nb" />
+        <img
+          src="../../assets/LogoShoes/newbalance.png"
+          alt="nb"
+          class="logo nb"
+        />
       </div>
       <div class="grid-content">
         <img src="../../assets/LogoShoes/hoka.png" alt="hk" class="logo hoka" />
       </div>
       <div class="grid-content">
-        <img src="../../assets/LogoShoes/uniqlo.png" alt="un" class="logo uniqlo" />
+        <img
+          src="../../assets/LogoShoes/uniqlo.png"
+          alt="un"
+          class="logo uniqlo"
+        />
       </div>
     </div>
     <div class="ss">
