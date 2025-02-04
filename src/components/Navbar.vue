@@ -176,9 +176,9 @@ const loading = ref(false);
 const navigateTo = (titleKey, path) => {
   router.push(path);
   updateTitle(titleKey);
-  // Cuộn trang lên đầu khi chuyển sang trang mới
-  window.scrollTo(0, 0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
 
 
 const updateTitle = () => {
