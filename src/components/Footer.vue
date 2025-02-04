@@ -144,6 +144,7 @@ const operatingStatus = ref("");
 const isOpen = ref(false);
 
 const navigateTo = (path) => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   router.push(path);
 };
 
