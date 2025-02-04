@@ -195,13 +195,30 @@ const changeLanguage = (lang) => {
     loading.value = false;
   }, 500);
 };
-</script>
 
-<style scoped>
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+  if (window.scrollY > 0) {
+    isScrolled.value = true;
+  } else {
+    isScrolled.value = false;
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+</script><style scoped>
 .icon {
   width: 22px;
   height: 100%;
 }
+
 .el-menu-popper-demo {
   max-width: 100%;
   display: flex;
@@ -211,7 +228,17 @@ const changeLanguage = (lang) => {
   top: 0;
   z-index: 2000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
+
+.el-menu-popper-demo.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .el-menu-item a {
   display: flex;
   align-items: center;
@@ -222,5 +249,4 @@ const changeLanguage = (lang) => {
   margin-right: 8px;
   vertical-align: middle;
 }
-
 </style>
