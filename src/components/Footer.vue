@@ -147,11 +147,6 @@ const navigateTo = (path) => {
   router.push(path);
 };
 
-const changeLanguage = (language) => {
-  setLocale(language);
-  updateOperatingStatus();
-};
-
 watch(locale, () => {
   updateOperatingStatus();
 });
