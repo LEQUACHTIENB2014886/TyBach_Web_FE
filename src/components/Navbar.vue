@@ -174,10 +174,12 @@ const currentLanguageKey = ref("home");
 const loading = ref(false);
 
 const navigateTo = (titleKey, path) => {
-  currentLanguageKey.value = titleKey;
-  updateTitle();
   router.push(path);
+  updateTitle(titleKey);
+  // Cuộn trang lên đầu khi chuyển sang trang mới
+  window.scrollTo(0, 0);
 };
+
 
 const updateTitle = () => {
   document.title = t(currentLanguageKey.value);
