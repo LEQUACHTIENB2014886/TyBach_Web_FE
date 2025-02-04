@@ -3,6 +3,8 @@
       <LoadingOverlay :loading="loading" />
       <Header :class="headerClass" />
       <Navbar :class="navbarClass" @change-loading="setLoading" />
+      <div :class="contentClass">
+      </div>
     </div>
   </template>
   
@@ -15,21 +17,22 @@
   const loading = ref(true);
   const headerClass = ref("");
   const navbarClass = ref("");
+  const contentClass = ref("");
   
   const handleScroll = () => {
-    if (window.scrollY > 50) {
-      headerClass.value = "hidden"; 
-      navbarClass.value = "fixed";  
+    if (window.scrollY > 100) {
+      navbarClass.value = "fixed"; 
+      contentClass.value = "navbar-fixed"; 
     } else {
-      headerClass.value = "";
       navbarClass.value = "";
+      contentClass.value = ""; 
     }
   };
   
   onMounted(() => {
     window.addEventListener("scroll", handleScroll);
   });
-  
+
   onBeforeUnmount(() => {
     window.removeEventListener("scroll", handleScroll);
   });
@@ -46,9 +49,10 @@
   </script>
   
   <style scoped>
-  .hidden {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
   
   .fixed {
@@ -57,6 +61,10 @@
     width: 100%;
     z-index: 999;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-fixed {
+    padding-top: 60px; 
   }
   </style>
   
