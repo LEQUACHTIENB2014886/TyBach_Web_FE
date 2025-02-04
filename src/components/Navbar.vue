@@ -199,9 +199,8 @@ const changeLanguage = (lang) => {
 
 <style scoped>
 .icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
+  width: 22px;
+  height: 100%;
 }
 .el-menu-popper-demo {
   max-width: 100%;
@@ -224,8 +223,4 @@ const changeLanguage = (lang) => {
   vertical-align: middle;
 }
 
-.icon {
-  width: 22px;
-  height: 100%;
-}
 </style>
