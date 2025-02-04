@@ -13,16 +13,14 @@ import { useStore } from "vuex";
 import Header from "./components/Header.vue";
 import Headertitle from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
-
+defineEmits(["update-language"]);
 
 const store = useStore();
 const locale = computed(() => store.getters["language/locale"]);
 
 const fullscreenLoading = ref(false);
 
-const updateLanguage = (newLang) => {
-  store.dispatch("language/changeLanguage", newLang);
-};
+const updateLanguage = () => {};
 
 watch(locale, (newLocale) => {
   document.title = pageTitles[newLocale] || "Trang chủ";

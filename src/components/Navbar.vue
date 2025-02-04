@@ -152,12 +152,10 @@
 </template><script setup>
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
-import { useStore } from "vuex";
 import { ref, watch } from "vue";
 
 const { t, locale } = useI18n();
 const router = useRouter();
-const store = useStore();
 const currentLanguageKey = ref("home");
 
 const navigateTo = (titleKey, path) => {
@@ -174,18 +172,9 @@ watch(locale, () => {
   updateTitle();
 });
 
-const isLoading = ref(false);
-
 const changeLanguage = (lang) => {
-  isLoading.value = true;
   locale.value = lang;
-
   localStorage.setItem("language", lang);
-  updateTitle();
-
-  setTimeout(() => {
-    isLoading.value = false;
-  }, 500);
 };
 </script>
 <style scoped>
