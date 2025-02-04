@@ -2,8 +2,10 @@
   <div id="app">
     <LoadingOverlay :loading="loading" />
     <Header />
-    <Headertitle />
-    <router-view />
+    <Headertitle @change-loading="setLoading" />
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
     <Footer />
   </div>
 </template>
@@ -17,6 +19,10 @@ import LoadingOverlay from "./components/LoadingOverlay.vue";
 
 const loading = ref(true);
 
+const setLoading = (value) => {
+  loading.value = value;
+};
+
 onMounted(() => {
   setTimeout(() => {
     loading.value = false;
@@ -28,5 +34,15 @@ onMounted(() => {
 #app {
   display: flex;
   flex-direction: column;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
