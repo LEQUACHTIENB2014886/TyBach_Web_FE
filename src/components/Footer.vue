@@ -137,7 +137,7 @@ import { useI18n } from "vue-i18n";
 import { ref, onMounted } from "vue";
 import { watch } from "vue";
 
-const { t, locale, setLocale } = useI18n();
+const { t, locale } = useI18n();
 const router = useRouter();
 
 const operatingStatus = ref("");
