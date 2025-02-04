@@ -1,5 +1,5 @@
 <template>
-  <el-menu 
+  <el-menu
     ellipsis
     class="el-menu-popper-demo"
     mode="horizontal"
@@ -71,7 +71,10 @@
       <el-menu-item
         index="5-1"
         @click="
-          navigateTo('company_activities', '/company-activities/company-activities')
+          navigateTo(
+            'company_activities',
+            '/company-activities/company-activities'
+          )
         "
       >
         {{ $t("company_activities") }}
@@ -171,9 +174,18 @@ watch(locale, () => {
   updateTitle();
 });
 
+const isLoading = ref(false);
+
 const changeLanguage = (lang) => {
+  isLoading.value = true;
   locale.value = lang;
+
+  localStorage.setItem("language", lang);
   updateTitle();
+
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 500);
 };
 </script>
 <style scoped>
@@ -194,13 +206,11 @@ const changeLanguage = (lang) => {
   top: 0;
   z-index: 2000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 }
 .el-menu-item a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
 }
 
 .el-menu-item img.icon {

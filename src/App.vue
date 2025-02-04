@@ -14,6 +14,7 @@ import Header from "./components/Header.vue";
 import Headertitle from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 
+
 const store = useStore();
 const locale = computed(() => store.getters["language/locale"]);
 

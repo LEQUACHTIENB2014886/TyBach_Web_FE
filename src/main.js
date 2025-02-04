@@ -15,11 +15,11 @@ const messages = {
   vi,
   en,
   zh,
-};
-const initialLocale = store.state.language.locale || 'vi'; 
 
+};
+const initialLocale = localStorage.getItem('language') || 'vi';  
 const i18n = createI18n({
-  legacy: false, 
+  legacy: false,
   locale: initialLocale, 
   messages,
 });
@@ -35,3 +35,4 @@ app.use(router);
 app.use(store);
 app.use(i18n);
 app.mount('#app');
+

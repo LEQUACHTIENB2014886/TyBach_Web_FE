@@ -1,15 +1,16 @@
 const state = {
-  language: 'vi',
+  language: localStorage.getItem('language') || 'vi', // Lấy ngôn ngữ từ localStorage
   title: 'Trang chủ'
 };
 
 const mutations = {
   setLanguage(state, language) {
     state.language = language;
+    localStorage.setItem('language', language); // Lưu ngôn ngữ vào localStorage
   },
   setTitle(state, title) {
     state.title = title;
-    document.title = title; 
+    document.title = title;
   }
 };
 
