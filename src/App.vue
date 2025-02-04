@@ -50,12 +50,6 @@ const updateLanguage = (newLang) => {
   store.dispatch("language/changeLanguage", newLang);
 };
 
-const pageTitles = {
-  vi: "Trang chủ",
-  en: "Home",
-  zh: "首页",
-};
-
 watch(locale, (newLocale) => {
   document.title = pageTitles[newLocale] || "Trang chủ";
 });
