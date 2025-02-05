@@ -3,6 +3,9 @@
     <el-row class="startfooter">
       <el-col :span="6" :xs="24" :sm="24" :md="12" :lg="5" :xl="5" class="ft">
         <div class="title">{{ $t("introduce") }}</div>
+        <div class="content" @click="navigateTo('/homepage')">
+          {{ $t("home") }}
+        </div>
         <div class="content" @click="navigateTo('/introduce/overview')">
           {{ $t("general_intro") }}
         </div>

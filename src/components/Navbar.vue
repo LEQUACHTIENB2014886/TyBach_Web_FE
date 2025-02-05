@@ -7,7 +7,7 @@
       mode="horizontal"
       :popper-offset="16"
     >
-      <el-menu-item index="1" @click="navigateTo('home', '/')">
+      <el-menu-item index="1" @click="navigateTo('home', '/homepage')">
         {{ $t("home") }}
       </el-menu-item>
 

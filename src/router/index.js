@@ -14,7 +14,8 @@ import ContactUs from '../views/Contact/ContactUs.vue';
 import SubmitApplication from '../views/Contact/SubmitApplication.vue';
 
 const routes = [
-  { path: '/', component: Homepage },
+  { path: '/', redirect: '/homepage' },
+  { path: '/homepage', component: Homepage },
   { path: '/introduce/overview', component: Overview },
   { path: '/introduce/development-history', component: DevelopmentHistory },
   { path: '/social-responsibility/labor-rights', component: LaborRights },
