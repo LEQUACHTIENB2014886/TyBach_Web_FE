@@ -1,3 +1,4 @@
+<!-- components/ScrollNavbar.vue -->
 <template>
     <div>
       <LoadingOverlay :loading="loading" />
@@ -10,9 +11,9 @@
   
   <script setup>
   import { ref, onMounted, onBeforeUnmount } from "vue";
-  import Header from "./Header.vue";
-  import Navbar from "./Navbar.vue";
-  import LoadingOverlay from "./LoadingOverlay.vue";
+  import Header from "@components/Header.vue";
+  import Navbar from "@components/Navbar.vue";
+  import LoadingOverlay from "@components/LoadingOverlay.vue";
   
   const loading = ref(true);
   const headerClass = ref("");

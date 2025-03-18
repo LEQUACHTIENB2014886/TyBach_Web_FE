@@ -17,8 +17,8 @@
 
 <script setup>
 import { computed, onMounted, watch } from "vue";
-import { useClockStore } from "../stores/modules/clock";
-import { useI18n } from "vue-i18n";
+import { useClockStore } from "@/stores/modules/clock";
+import { useI18n } from 'vue-i18n';
 
 const clockStore = useClockStore();
 const { locale } = useI18n();

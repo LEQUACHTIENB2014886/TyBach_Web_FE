@@ -102,7 +102,8 @@ import { onMounted, onBeforeUnmount, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useNavbarStore } from '../stores/navbar';
-import LoadingOverlay from './LoadingOverlay.vue';
+import LoadingOverlay from '@components/LoadingOverlay.vue';
+
 
 const { t, locale } = useI18n();
 const router = useRouter();

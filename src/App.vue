@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <ScrollNavbar />
-    <router-view v-slot="{ Component }">
+    <router-view v-slot="route">
       <transition name="fade" mode="out-in">
-        <component :is="Component" />
+        <component :is="route.Component" />
       </transition>
     </router-view>
     <Footer />
@@ -11,8 +11,8 @@
 </template>
 
 <script setup>
-import ScrollNavbar from "./components/ScrollNavbar.vue";
-import Footer from "./components/Footer.vue";
+import ScrollNavbar from "@/components/ScrollNavbar.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <style>
