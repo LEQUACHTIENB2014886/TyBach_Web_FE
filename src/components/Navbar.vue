@@ -1,3 +1,4 @@
+<!-- components/Navbar.vue -->
 <template>
   <div>
     <LoadingOverlay :loading="loading" />
@@ -6,154 +7,88 @@
       class="el-menu-popper-demo"
       mode="horizontal"
       :popper-offset="16"
+      :default-active="navbarStore.activeNav"
     >
-      <el-menu-item index="1" @click="navigateTo('home', '/homepage')">
+      <el-menu-item index="home" @click="navigateTo('home', '/homepage')">
         {{ $t("home") }}
       </el-menu-item>
 
-      <el-sub-menu index="2">
+      <el-sub-menu index="introduce">
         <template #title>{{ $t("introduce") }}</template>
-        <el-menu-item
-          index="2-1"
-          @click="navigateTo('general_intro', '/introduce/overview')"
-        >
+        <el-menu-item index="general_intro" @click="navigateTo('general_intro', '/introduce/overview')">
           {{ $t("general_intro") }}
         </el-menu-item>
-        <el-menu-item
-          index="2-2"
-          @click="navigateTo('history', '/introduce/development-history')"
-        >
+        <el-menu-item index="history" @click="navigateTo('history', '/introduce/development-history')">
           {{ $t("history") }}
         </el-menu-item>
       </el-sub-menu>
-
-      <el-sub-menu index="3">
+      
+      <el-sub-menu index="social_responsibility">
         <template #title>{{ $t("social_responsibility") }}</template>
-        <el-menu-item
-          index="3-1"
-          @click="
-            navigateTo('labor_rights', '/social-responsibility/labor-rights')
-          "
-        >
+        <el-menu-item index="labor_rights" @click="navigateTo('labor_rights', '/social-responsibility/labor-rights')">
           {{ $t("labor_rights") }}
         </el-menu-item>
-        <el-menu-item
-          index="3-2"
-          @click="
-            navigateTo(
-              'health_safety',
-              '/social-responsibility/occupational-health-safety'
-            )
-          "
-        >
+        <el-menu-item index="health_safety" @click="navigateTo('health_safety', '/social-responsibility/occupational-health-safety')">
           {{ $t("health_safety") }}
         </el-menu-item>
-        <el-menu-item
-          index="3-3"
-          @click="
-            navigateTo(
-              'environmental_protection',
-              '/social-responsibility/environmental-protection'
-            )
-          "
-        >
+        <el-menu-item index="environmental_protection" @click="navigateTo('environmental_protection', '/social-responsibility/environmental-protection')">
           {{ $t("environmental_protection") }}
         </el-menu-item>
       </el-sub-menu>
 
-      <el-menu-item
-        index="4"
-        @click="navigateTo('party_cell_activities', '/branch-activities')"
-      >
+      <el-menu-item index="party_cell_activities" @click="navigateTo('party_cell_activities', '/branch-activities')">
         {{ $t("party_cell_activities") }}
       </el-menu-item>
 
-      <el-sub-menu index="5">
+      <el-sub-menu index="company_activities">
         <template #title>{{ $t("company_activities") }}</template>
-        <el-menu-item
-          index="5-1"
-          @click="
-            navigateTo(
-              'company_activities',
-              '/company-activities/company-activities'
-            )
-          "
-        >
+        <el-menu-item index="company_activities_page" @click="navigateTo('company_activities_page', '/company-activities/company-activities')">
           {{ $t("company_activities") }}
         </el-menu-item>
-        <el-menu-item
-          index="5-2"
-          @click="
-            navigateTo('activity_videos', '/company-activities/activity-videos')
-          "
-        >
+        <el-menu-item index="activity_videos" @click="navigateTo('activity_videos', '/company-activities/activity-videos')">
           {{ $t("activity_videos") }}
         </el-menu-item>
       </el-sub-menu>
 
-      <el-sub-menu index="6">
+      <el-sub-menu index="recruitment">
         <template #title>{{ $t("recruitment") }}</template>
-        <el-menu-item
-          index="6-1"
-          @click="
-            navigateTo('recruitment_info', '/recruitment/job-information')
-          "
-        >
+        <el-menu-item index="recruitment_info" @click="navigateTo('recruitment_info', '/recruitment/job-information')">
           {{ $t("recruitment_info") }}
         </el-menu-item>
-        <el-menu-item
-          index="6-2"
-          @click="navigateTo('human_resources', '/recruitment/human-resources')"
-        >
+        <el-menu-item index="human_resources" @click="navigateTo('human_resources', '/recruitment/human-resources')">
           {{ $t("human_resources") }}
         </el-menu-item>
       </el-sub-menu>
 
-      <el-sub-menu index="7">
+      <el-sub-menu index="contact">
         <template #title>{{ $t("contact") }}</template>
-        <el-menu-item
-          index="7-1"
-          @click="navigateTo('contact_us', '/contact/contact-us')"
-        >
+        <el-menu-item index="contact_us" @click="navigateTo('contact_us', '/contact/contact-us')">
           {{ $t("contact_us") }}
         </el-menu-item>
-        <el-menu-item
-          index="7-2"
-          @click="
-            navigateTo('submit_application', '/contact/submit-application')
-          "
-        >
+        <el-menu-item index="submit_application" @click="navigateTo('submit_application', '/contact/submit-application')">
           {{ $t("submit_application") }}
         </el-menu-item>
       </el-sub-menu>
 
-      <el-sub-menu index="8">
+      <el-sub-menu index="language">
         <template #title>
           <img src="../assets/language.svg" alt="icon" class="icon" />
         </template>
-        <el-menu-item index="8-1" @click="changeLanguage('vi')">
+        <el-menu-item index="vi" @click="changeLanguage('vi')">
           <a>
-            <img
-              src="../assets/Flag/VietNam_Flag.png"
-              alt="icon"
-              class="icon"
-            />
+            <img src="../assets/Flag/VietNam_Flag.png" alt="icon" class="icon" />
             {{ $t("vietnamese") }}
           </a>
         </el-menu-item>
-        <el-menu-item index="8-2" @click="changeLanguage('zh')">
+        <el-menu-item index="zh" @click="changeLanguage('zh')">
           <a>
             <img src="../assets/Flag/China_Flag.png" alt="icon" class="icon" />
             {{ $t("chinese") }}
           </a>
         </el-menu-item>
-        <el-menu-item index="8-3" @click="changeLanguage('en')">
+        <el-menu-item index="en" @click="changeLanguage('en')">
           <a>
-            <img
-              src="../assets/Flag/United_KingDom_Flag.png"
-              alt="icon"
-              class="icon"
-            />
+            <img src="../assets/Flag/United_KingDom_Flag.png" alt="icon" class="icon" />
             {{ $t("english") }}
           </a>
         </el-menu-item>
@@ -163,24 +98,25 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
-import { useI18n } from "vue-i18n";
-import { ref, watch } from "vue";
-import LoadingOverlay from "./LoadingOverlay.vue";
+import { onMounted, onBeforeUnmount, ref, watch } from 'vue';
+import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
+import { useNavbarStore } from '../stores/navbar';
+import LoadingOverlay from './LoadingOverlay.vue';
 
 const { t, locale } = useI18n();
 const router = useRouter();
-const currentLanguageKey = ref("home");
+const navbarStore = useNavbarStore();
 const loading = ref(false);
 
-const navigateTo = (titleKey, path) => {
+const navigateTo = (navKey, path) => {
   router.push(path);
-  updateTitle(titleKey);
+  navbarStore.setActiveNav(navKey);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 const updateTitle = () => {
-  document.title = t(currentLanguageKey.value);
+  document.title = t(navbarStore.activeNav);
 };
 
 watch(locale, () => {
@@ -197,26 +133,22 @@ const changeLanguage = (lang) => {
 };
 
 const isScrolled = ref(false);
-
 const handleScroll = () => {
-  if (window.scrollY > 0) {
-    isScrolled.value = true;
-  } else {
-    isScrolled.value = false;
-  }
+  isScrolled.value = window.scrollY > 0;
 };
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 });
-
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
 });
-</script><style scoped>
+</script>
+
+<style scoped>
 .icon {
   width: 22px;
-  height: 100%;
+  height: 16px;
 }
 
 .el-menu-popper-demo {

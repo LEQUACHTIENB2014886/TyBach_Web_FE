@@ -1,3 +1,4 @@
+<!-- components/Header.vue -->
 <template>
   <header>
     <el-row :gutter="20" class="flex-center">
@@ -16,26 +17,27 @@
 
 <script setup>
 import { computed, onMounted, watch } from "vue";
-import { useStore } from "vuex";
+import { useClockStore } from "../stores/modules/clock";
 import { useI18n } from "vue-i18n";
 
-const store = useStore();
+const clockStore = useClockStore();
 const { locale } = useI18n();
 
-const currentDay = computed(() => store.getters["clock/currentDay"]);
-const currentDate = computed(() => store.getters["clock/currentDate"]);
+const currentDay = computed(() => clockStore.currentDay);
+const currentDate = computed(() => clockStore.currentDate);
 
 onMounted(() => {
-  store.dispatch("clock/updateTime");
+  clockStore.updateTime();
   setInterval(() => {
-    store.dispatch("clock/updateTime");
+    clockStore.updateTime();
   }, 1000);
 });
 
 watch(locale, () => {
-  store.dispatch("clock/updateTime");
+  clockStore.updateTime();
 });
 </script>
+
 
 <style scoped>
 header {
